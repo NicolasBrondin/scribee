@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body onmousemove="Game.move_element(event)" onmouseup="Game.release_element(event)" ontouchmove="Game.move_element(event)" ontouchend="Game.release_element(event)">
+        <img id="img1" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" src="img/aventure.png" data="1">
+        <img id="img2" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" src="img/conte.png" data="2">
+        <img id="img3" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" src="img/polar.png" data="3">
+        <img id="img4" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" src="img/robot.png" data="4">
+        <div id="div1" style="background: grey; width:100px; height:100px;margin:5px;"></div>
+        <div id="div2" style="background: grey; width:100px; height:100px;margin:5px;"></div>
+        <div id="div3" style="background: grey; width:100px; height:100px;margin:5px;"></div>
+        <div id="div4" style="background: grey; width:100px; height:100px;margin:5px;"></div>
+        <script type="text/javascript">
+            var JS = {
+    mouse: {
+        move: function(e){
+            var x,y;
+
+            
+            if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
+            var touch = e.touches[0] || e.changedTouches[0];
+            x = touch.pageX;
+            y = touch.pageY;
+          } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
+            x = e.pageX;
+            y = e.pageY;
+          }
+
+             if (x < 0){x = 0;}
+             if (y < 0){y = 0;}  
+            return {x:x, y:y};
+        }
+    },
+    element: {
+        move: function(element, x,y){
+             element.style.position = "absolute" ;
+             element.style.left = x+"px";
+             element.style.top = y+"px";
+        }
+    }
+    
+};
+
+var Game = {
+     expected_answer: [1,2,3,4],
+     given_answer:[],
+     selected_element: null,
+     sound: new Audio('audio/voice.mp3'),
+     score: 0,
+     play_sound: function() {
+          if(sound){
+               sound.play();
+          }
+     },
+     pick_element: function(e){
+         e.preventDefault();
+         this.selected_element = e.target;
+     },
+     release_element: function(e){
+         //Need to check position
+         this.selected_element = null;
+     },
+     move_element: function(e){
+          var position = JS.mouse.move(e);
+          if(this.selected_element){
+              JS.element.move(this.selected_element, position.x, position.y);
+          }
+     },
+     check_answers: function(){
+          if(this.expected_answer === this.given_answers){
+              score ++;
+          } else {
+              score --;
+          }
+     },
+     init: function(){
+     },
+     play: function(){
+     }.bind(this)
+};
+
+Game.init();
+        </script>
+    </body>
+</html>
