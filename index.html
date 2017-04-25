@@ -5,26 +5,29 @@
     <style>
         body, html {
             background: #ecf0f1;
+            font-family: Roboto,Helvetica,Arial;
         }    
     </style></head>
     <body onmousemove="Game.move_element(event)" onmouseup="Game.release_element(event)" ontouchmove="Game.move_element(event)" ontouchend="Game.release_element(event)">
-        <div id="buttons_container" style="height:150px;">
+        <div id="buttons_container" >
             <button onclick="Game.play_sound()">Ecouter la phrase</button>
         </div>
         <div id="elements_container" style="height:150px;">
-            <div style="display:block;float:left; width:100px; height:120px;" id="img1" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="1">   
-                <img style="position: relative" src="img/aventure.png"/>
-                <div style="position:relative;background: white;margin:0;padding:0;height:20px;">Un garçon</div> 
+            <div style="display:block;float:left; width:100px; height:120px;margin:5px;" id="img1" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="1">   
+                <img style="width:100px; height:100px;" src="img/dog.png"/>
+                <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Chien</div> 
             </div>
-            <div style="display:block;float:left;" id="img2" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="2">   <img src="img/conte.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;">Un robot</div> </div>
-            <div style="display:block;float:left;" id="img3" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="3">   <img src="img/polar.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;">Une fille</div>  </div>
-            <div style="display:block;float:left;" id="img4" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="4">   <img src="img/robot.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;">Une maison</div>  </div>
+            <div style="display:block;float:left;margin:5px;" id="img2" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="2">   <img style="width:100px; height:100px;" src="img/forest.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Fôret</div> </div>
+            <div style="display:block;float:left;margin:5px;" id="img3" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="3">   <img style="width:100px; height:100px;" src="img/house.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Maison</div>  </div>
+            <div style="display:block;float:left;margin:5px;" id="img4" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="4">   <img style="width:100px; height:100px;" src="img/walk.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Marcher</div>  </div>
+            <div style="display:block;float:left;margin:5px;" id="img5" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="4">   <img style="width:100px; height:100px;" src="img/boy.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Garçon</div>  </div>
             </div>
         <div id="answers_container" style="height:150px;">
         <div id="div1" style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
         <div id="div2" style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
         <div id="div3" style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
         <div id="div4" style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
+        <div id="div5" style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
             </div>
         <div id="buttons_container" style="height:150px;">
             <button onclick="Game.check_answers()">Continuer</button>
