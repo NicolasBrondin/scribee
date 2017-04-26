@@ -4,6 +4,7 @@
         <meta charset="utf-8"/>
         <link rel="icon" href="img/icon.png"/>
         <link rel="stylesheet" href="css/main.css"/>
+        <title>Scribee - Apprendre à lire avec des histoires - par Peetch</title>
     </head>
     <body onmousemove="Game.move_element(event)" onmouseup="Game.release_element(event)" ontouchmove="Game.move_element(event)" ontouchend="Game.release_element(event)">
         <div id="splash-screen">
@@ -25,12 +26,12 @@
             </div>
         </div>
         <div id="game-container">
-        <div id="buttons_container" >
-            
-            <button onclick="Game.show_menu()">Retour menu</button>
-            <button onclick="Game.play_sound()">Ecouter la phrase</button>
-        </div>
-        <div id="elements_container" style="height:150px;">
+            <div id="buttons-container" >
+                <button id="btn-top-left" onclick="Game.show_menu()"><img src="img/btn-menu.png"/></button>
+                <button id="btn-top-right" onclick="Game.play_sound()"><img src="img/btn-listen.png"/></button>
+                <button id="btn-bottom-right" onclick="Game.check_answers()"><img src="img/btn-next.png"/></button>
+            </div>
+        <div id="elements_container" style="padding:150px;">
             <div style="display:block;float:left; width:100px;margin:5px;" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="0">   
                 <img style="width:100px; height:100px;" src="img/dog.png"/>
                 <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Chien</div> 
@@ -40,7 +41,7 @@
             <div style="display:block;float:left;margin:5px;"  onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="3">   <img style="width:100px; height:100px;" src="img/walk.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Marcher</div>  </div>
             <div style="display:block;float:left;margin:5px;"  onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="4">   <img style="width:100px; height:100px;" src="img/boy.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Garçon</div>  </div>
             </div>
-        <div id="answers_container" style="height:150px;">
+        <div id="answers_container" style="padding:150px;">
            
         <div  style=" width:100px; height:100px;float:left;line-height:100px; font-size: 20px;text-align:center;">Le</div>
         <div class="drop"  style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
@@ -52,9 +53,7 @@
             <div  style=" width:100px; height:100px;float:left;line-height:100px; font-size: 20px;text-align:center;">dans la</div>
         <div class="drop" style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
             </div>
-        <div  id="buttons_container" style="height:150px;">
-            <button onclick="Game.check_answers()">Continuer</button>
-        </div>
+ 
             </div>
         
         <script src="js/JS.js"></script>

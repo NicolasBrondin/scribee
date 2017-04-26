@@ -85,14 +85,14 @@ body, html {
     text-align:center;
 }
 #menu-title h1 {
-background: url('../img/ribbon.png') 0% 0% / 100% 100%;
+    background: url('../img/ribbon.png') 0% 0% / 100% 100%;
     display: inline-block;
-color: white;
-padding-top: 10px;
-padding-left: 50px;
-padding-right: 50px;
-vertical-align: text-top;
-padding-bottom: 25px;
+    color: white;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    vertical-align: text-top;
+    padding-bottom: 25px;
 }
 #menu-buttons {
     padding-left:25px;
@@ -118,4 +118,52 @@ padding-bottom: 25px;
 
 #game-container {
     display: none;
+    width:100vw;
+    height:100vh;
+}
+
+#game-container #buttons-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+#game-container #buttons-container button {
+    position: absolute;
+    background: #f39c12;
+    border: none;
+    width:100px;
+    height:100px;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0px 3px 0px #d35400;
+}
+
+#game-container #buttons-container button img {
+    width:100%;
+    height: 100%;
+}
+
+#game-container #buttons-container button:hover {
+
+    box-shadow: 0px -3px 0px #d35400;
+}
+
+#game-container #buttons-container button#btn-top-left {
+    top:10px;
+    left:10px;
+}
+
+#game-container #buttons-container button#btn-top-right {
+    top:10px;
+    right:10px;
+}
+
+#game-container #buttons-container button#btn-bottom-right{
+    bottom:10px;
+    right:10px;
 }
