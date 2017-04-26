@@ -2,13 +2,49 @@
 <html>
     <head>
         <meta charset="utf-8"/>
+        <link rel="icon" href="img/icon.png"/>
     <style>
         body, html {
             background: #ecf0f1;
             font-family: Roboto,Helvetica,Arial;
-        }    
+            
+            width:100vw;
+            height:100vh;
+            
+            overflow: hidden;
+        }  
+        
+        @keyframes splash {
+            0% {opacity: 1;visibility: visible;}
+            50% {opacity: 1;visibility: visible;}
+            99% {opacity: 0;visibility: visible;}
+            100% {opacity: 0;visibility: hidden;}
+            
+        }
+        
+        #splash-screen{
+            position: absolute;
+            width:100vw;
+            height:100vh;
+            background: #ecf0f1;
+            text-align: center;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+            animation-name: splash;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+        
+        #splash-screen img {
+            margin-top: calc((100vh - 500px)/2);
+        }
     </style></head>
     <body onmousemove="Game.move_element(event)" onmouseup="Game.release_element(event)" ontouchmove="Game.move_element(event)" ontouchend="Game.release_element(event)">
+        <div id="splash-screen">
+            <img src="img/icon.png" width="500" height="500"/>
+        </div>
         <div id="buttons_container" >
             <button onclick="Game.play_sound()">Ecouter la phrase</button>
         </div>
@@ -20,7 +56,7 @@
             <div style="display:block;float:left;margin:5px;" id="img2" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="2">   <img style="width:100px; height:100px;" src="img/forest.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Fôret</div> </div>
             <div style="display:block;float:left;margin:5px;" id="img3" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="3">   <img style="width:100px; height:100px;" src="img/house.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Maison</div>  </div>
             <div style="display:block;float:left;margin:5px;" id="img4" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="4">   <img style="width:100px; height:100px;" src="img/walk.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Marcher</div>  </div>
-            <div style="display:block;float:left;margin:5px;" id="img5" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="4">   <img style="width:100px; height:100px;" src="img/boy.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Garçon</div>  </div>
+            <div style="display:block;float:left;margin:5px;" id="img5" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="5">   <img style="width:100px; height:100px;" src="img/boy.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Garçon</div>  </div>
             </div>
         <div id="answers_container" style="height:150px;">
         <div id="div1" style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
@@ -87,26 +123,34 @@ var Game = {
      release_element: function(e){
          if(Game.selected_element){
              //Need to check position
-             console.log(Game.answers);
+             //console.log(Game.answers);
              var position = Game.answers.find(function(a){
                  var rect1 = JS.element.get_rect(a);
                  var rect2 = JS.element.get_rect(Game.selected_element);
-                 console.log(rect1, rect2);
+                 //console.log(rect1, rect2);
                  return rect2.x > rect1.x && rect2.x < (rect1.x + rect1.w) && rect2.y > rect1.y && rect2.y < (rect1.y + rect1.h);
              }.bind(this));
-             console.log(position);
+             //console.log(position);
              if(position){
+                 if(position.children.length > 0){
+                     Game.selected_element.parentElement.appendChild(position.children[0]);
+                 }
                  JS.element.move(Game.selected_element,0,0);
                  Game.selected_element.style.position = 'relative';
                  position.appendChild(Game.selected_element);
                /* Game.selected_element.style.left = JS.element.get_rect(position).x; 
                 Game.selected_element.style.top = JS.element.get_rect(position).y; */
-                 console.log(Game.selected_element);
+                 //console.log(Game.selected_element);
              } else {
                  JS.element.move(Game.selected_element,0,0);
                  Game.selected_element.style.position = 'relative';
                  document.getElementById('elements_container').appendChild(Game.selected_element);
              }
+             Game.given_answer = Game.answers.map(function(a){
+                 
+                 return a.children[0] ? a.children[0].attributes.data.nodeValue : null;
+             });
+             console.log(Game.given_answer);
          }
          Game.selected_element = null;
      }.bind(this),
