@@ -31,29 +31,29 @@
                 <button id="btn-top-right" onclick="Game.play_sound()"><img src="img/btn-listen.png"/></button>
                 <button id="btn-bottom-right" onclick="Game.check_answers()"><img src="img/btn-next.png"/></button>
             </div>
-        <div id="elements_container" style="padding:150px;">
-            <div style="display:block;float:left; width:100px;margin:5px;" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="0">   
-                <img style="width:100px; height:100px;" src="img/dog.png"/>
-                <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Chien</div> 
+            <div id="story-container">
+                <div id="elements_container" >
+                    <div class="drag" onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="0">   
+                        <img style="width:100px; height:100px;" src="img/dog.png"/>
+                        <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">chien</div> 
+                    </div>
+                    <div class="drag"  onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="1">   <img style="width:100px; height:100px;" src="img/forest.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">fôret</div> </div>
+                    <div class="drag"  onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="2">   <img style="width:100px; height:100px;" src="img/house.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">maison</div>  </div>
+                    <div class="drag"  onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="3">   <img style="width:100px; height:100px;" src="img/walk.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">marchaient</div>  </div>
+                    <div class="drag"  onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="4">   <img style="width:100px; height:100px;" src="img/boy.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">garçon</div>  </div>
+                </div>
+                <div id="answers_container">
+                    <div class="slot" ><p>Le</p></div>
+                    <div class="drop slot"  ></div>
+                    <div class="slot" ><p>et son</p></div>
+                    <div class="drop slot"></div>
+                    <div class="drop slot"></div>
+                    <div class="slot" ><p>vers la</p></div>
+                    <div class="drop slot"></div>
+                    <div class="slot" ><p>dans la</p></div>
+                    <div class="drop slot"></div>
+                </div>
             </div>
-            <div style="display:block;float:left;margin:5px;"  onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="1">   <img style="width:100px; height:100px;" src="img/forest.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Fôret</div> </div>
-            <div style="display:block;float:left;margin:5px;"  onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="2">   <img style="width:100px; height:100px;" src="img/house.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Maison</div>  </div>
-            <div style="display:block;float:left;margin:5px;"  onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="3">   <img style="width:100px; height:100px;" src="img/walk.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Marcher</div>  </div>
-            <div style="display:block;float:left;margin:5px;"  onmousedown="Game.pick_element(event)" ontouchstart="Game.pick_element(event)" data="4">   <img style="width:100px; height:100px;" src="img/boy.png"/> <div style="position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;">Garçon</div>  </div>
-            </div>
-        <div id="answers_container" style="padding:150px;">
-           
-        <div  style=" width:100px; height:100px;float:left;line-height:100px; font-size: 20px;text-align:center;">Le</div>
-        <div class="drop"  style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
-            <div  style=" width:100px; height:100px;float:left;line-height:100px; font-size: 20px;text-align:center;">et son</div>
-        <div class="drop"  style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
-        <div class="drop"  style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
-            <div  style=" width:100px; height:100px;float:left;line-height:100px; font-size: 20px;text-align:center;">vers la</div>
-        <div class="drop"  style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
-            <div  style=" width:100px; height:100px;float:left;line-height:100px; font-size: 20px;text-align:center;">dans la</div>
-        <div class="drop" style="background: #bdc3c7; width:100px; height:100px;margin:5px;float:left;"></div>
-            </div>
- 
             </div>
         
         <script src="js/JS.js"></script>

@@ -30,11 +30,14 @@ var Game = {
              //console.log(position);
              if(position /* && position.classList.indexOf('drop')!= -1*/){
                  if(position.children.length > 0){
+                    position.children[0].style.margin = "5px";
+                    position.children[0].style.border = "none";
                      Game.selected_element.parentElement.appendChild(position.children[0]);
                  }
                  JS.element.move(Game.selected_element,0,0);
                  Game.selected_element.style.position = 'relative';
                  position.appendChild(Game.selected_element);
+                 Game.selected_element.style.margin = "5px";
                /* Game.selected_element.style.left = JS.element.get_rect(position).x; 
                 Game.selected_element.style.top = JS.element.get_rect(position).y; */
                  //console.log(Game.selected_element);
@@ -52,9 +55,11 @@ var Game = {
          Game.selected_element = null;
      }.bind(this),
      move_element: function(e){
+         console.log(e);
           var position = JS.mouse.move(e);
+         console.log(position);
           if(this.selected_element){
-              JS.element.move(this.selected_element, position.x, position.y);
+              JS.element.move(this.selected_element, position.x-document.getElementById('story-container').offsetLeft, position.y+document.getElementById('elements_container').offsetTop);
           }
      },
      check_answers: function(){
@@ -64,9 +69,11 @@ var Game = {
               //console.log(Game.elements);
               if(Game.given_answer[i] != null && Game.given_answer[i] ==a){
                   Game.elements[a].style.border = "none";
+                  Game.elements[a].style.margin = "5px";
               }else {
                   console.log(Game.given_answer[i], a);
                   Game.elements[a].style.border = "4px solid #e74c3c";
+                  Game.elements[a].style.margin = "0";
               }
           });
           if(JSON.stringify(Game.expected_answer) === JSON.stringify(Game.given_answer)){
