@@ -101,7 +101,7 @@ body, html {
 
 #menu-buttons button {
     margin:12px;
-    border-radius: 5px;
+    //border-radius: 5px;
     cursor: pointer;
     border: none;
     background:none;
@@ -109,11 +109,13 @@ body, html {
     height:200px;
     overflow: hidden;
     padding: 0;
+    background: url('../img/frame.png') 0% 0% / 100% 100%;
 }
 
 #menu-buttons button img {
-    width:100%;
-    height: 100%;
+    width:68%;
+    height: 68%;
+    margin:16%;
 }
 
 #game-container {
@@ -205,6 +207,14 @@ body, html {
     display:inline-block;
     margin:5px;
     box-sizing: border-box;
+}
+
+.drag img {
+    width:100px; height:100px;
+}
+
+.drag div {
+    position:relative;background: white;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;
 }
 
 .slot {

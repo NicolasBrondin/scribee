@@ -27,6 +27,23 @@ var JS = {
         get_rect: function(element){
             return {x: element.offsetLeft, y: element.offsetTop, w: element.offsetWidth, h: element.offsetHeight};
         }
+    },
+    file: {
+        load: function(file, callback){
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function() {
+              if(request.readyState === 4) {
+                if(request.status === 200) { 
+                  callback(JSON.parse(request.responseText));
+                } else {
+                  console.error('An error occurred during your request: ', request.status + ' ' + request.statusText);
+                } 
+              }
+            }
+
+            request.open('Get', file, true);
+            request.send();
+        }
     }
     
 };

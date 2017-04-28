@@ -1,0 +1,23 @@
+{
+    "title": "La forêt",
+    "image":"forest.png",
+    "path":"story1",
+    "lang":"fr",
+    "premium":false,
+    "scenes": [
+        {
+            "sound":"scene1.mp3",
+            "words":[
+                { "label":"Un" },
+                { "label":"garçon",       "img":"boy",      "data":0 },
+                { "label":"et son" },
+                { "label":"chien",        "img":"dog",      "data":1 },
+                { "label":"marchaient",   "img":"walk",     "data":2 },
+                { "label":"vers la" },
+                { "label":"maison",       "img":"house",    "data":3 },
+                { "label":"dans la" },
+                { "label":"forêt",        "img":"forest",   "data":4 }
+            ]
+        }
+    ] 
+}
