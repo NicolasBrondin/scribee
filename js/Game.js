@@ -44,7 +44,7 @@ var Game = {
              JS.element.remove_class(Game.selected_element, "error");
              var answer = Game.answers.filter(function(a){ return [].slice.call(a.classList).indexOf('drop') != -1});
              answer = answer.map(function(a){
-                 console.log(a);
+                 
                 return a.children[0] ? parseInt(a.children[0].attributes.data.value) : null;
              });
              Game.current_story.set_user_answer(answer);

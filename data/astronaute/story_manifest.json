@@ -26,7 +26,7 @@
             "words":[
                 { "label":"Elle devait beaucoup apprendre à" },
                 { "label":"l'école",       "img":"school",      "data":0 },
-                { "label":", lire de " },
+                { "label":", lire des " },
                 { "label":"livres",       "img":"book",      "data":1 },
                 { "label":"et faire du sport." }
             ]

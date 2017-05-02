@@ -76,25 +76,22 @@ document.getElementById('answers_container').innerHTML = "";
         document.getElementById('menu-container').style.display = "none";
         document.getElementById('game-container').style.display = "block";
         this.play_sound();
-        //document.getElementById('narrator-screen').style.display = "block";
+
     };
     
     this.set_user_answer = function(answers){
         this.given_answer = answers;
-        console.log(answers);
     };
     
     this.check_answers = function(){
-        /*Game.given_answer.forEach(function(a,i){
-            if(a !== i){
-                
-            } else {
-                
-            }
-        });*/
+        
+        console.log(this.given_answer);
+        console.log(Game.elements);
         var err = false;
-        Game.elements.forEach(function(e,i){
-            if(this.given_answer[i] === i){
+        Game.elements.forEach(function(e){
+            console.log(e.attributes.data.value);
+            console.log(this.given_answer[e.attributes.data.value]);
+            if(this.given_answer[e.attributes.data.value] == e.attributes.data.value){
                 JS.element.remove_class(e, "error");
             } else {
                 JS.element.add_class(e, "error");
@@ -106,26 +103,6 @@ document.getElementById('answers_container').innerHTML = "";
         } else {
             return false;
         }
-        /*
-          Game.expected_answer.forEach(function(a,i){
-              //console.log(Game.elements);
-              if([].slice.call(a.classList).indexOf('drop') != -1){
-                  if(Game.given_answer[i] != null && Game.given_answer[i] ==a){
-                      Game.elements[a].style.border = "none";
-                      Game.elements[a].style.margin = "5px";
-                  }else {
-                      console.log(Game.given_answer[i], a);
-                      Game.elements[a].style.border = "4px solid #e74c3c";
-                      Game.elements[a].style.margin = "0";
-                  }
-              }
-          });
-          if(JSON.stringify(Game.expected_answer) === JSON.stringify(Game.given_answer)){
-              Game.score ++;
-              alert("Gagné");
-          } else {
-              Game.score --;
-          }
-         console.log(Game.score);*/
+
     };
 };
