@@ -174,7 +174,7 @@ background-size: 500px;
 #story-container #top-container {
     height: 130px;
 overflow: hidden;
-    background: white;
+    background: url('../img/wood-background.png');
 background-repeat: repeat-x;
 background-size: auto 100%;
 }
@@ -184,7 +184,7 @@ background-size: auto 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-background: white;
+background: url('../img/wood-background.png');
 background-repeat: repeat-x;
 background-size: auto 100%;
 }
@@ -311,6 +311,7 @@ margin: 0;
 font-size: 20px;
 padding-left: 10px;
 padding-right: 10px;
+    color:white;
 }
 
 .drop {
