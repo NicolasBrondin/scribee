@@ -279,8 +279,20 @@ background-size: auto 100%;
     vertical-align: top;
 }
 
+.drag.error div {
+    color:white;
+    background: #e74c3c;
+}
+
 .drag div {
-    position:relative;background: #ecf0f1;margin:0;padding:0;height:20px;text-align:center;font-weight:bold;
+    position:relative;
+    background: #ecf0f1;
+    margin:0;
+    padding:0;
+    height:20px;
+    text-align:center;
+    font-weight:bold;
+    color:black;
 }
 
 .slot {

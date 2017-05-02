@@ -14,7 +14,7 @@ var Game = {
      pick_element: function(e){
          Game.selected_element = e.target.parentElement;
          Game.selected_element_parent = Game.selected_element.parentElement;
-         Game.selected_element.style.border = "none";
+         JS.element.remove_class(Game.selected_element, "error");
          e.preventDefault();
          document.getElementById('story-container').appendChild(Game.selected_element);
      },
@@ -29,7 +29,9 @@ var Game = {
              if(position){
                  if(position.children.length > 0){
                      //fails because parent is story-container
+                     JS.element.remove_class(position.children[0], "error");
                      Game.selected_element_parent.appendChild(position.children[0]);
+                    
                  }
                  JS.element.move(Game.selected_element,0,0);
                  Game.selected_element.style.position = 'relative';
@@ -39,7 +41,7 @@ var Game = {
                  Game.selected_element.style.position = 'relative';
                  document.getElementById('elements_container').appendChild(Game.selected_element);
              }
-             
+             JS.element.remove_class(Game.selected_element, "error");
              var answer = Game.answers.filter(function(a){ return [].slice.call(a.classList).indexOf('drop') != -1});
              answer = answer.map(function(a){
                  console.log(a);
