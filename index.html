@@ -10,10 +10,6 @@
         <div id="splash-screen">
             <img src="img/icon.png" width="500" height="500"/>
         </div>
-        <div id="narrator-screen">
-            <img id="narrator-face" src="img/narrator.png" width="500" height="500"/>
-            <div id="narrator-mouth"></div>
-        </div>
         <div id="menu-container">
             <div id="menu-title">
             <h1 >Histoires</h1>
@@ -22,18 +18,32 @@
             </div>
         </div>
         <div id="game-container">
-            <div id="buttons-container" >
-                <button id="btn-top-left" onclick="Game.show_menu()"><img src="img/btn-menu.png"/></button>
-                <button id="btn-top-right" onclick="Game.play_sound()"><img src="img/btn-listen.png"/></button>
+            <!--<div id="buttons-container" >
+                
                 <button id="btn-bottom-right" onclick="Game.next_scene()"><img src="img/btn-next.png"/></button>
-            </div>
+            </div>-->
             <div id="story-container">
-                <div id="elements_container" >
+                <div id="top-container" >
+                    <button id="btn-top-left" onclick="Game.show_menu()"><img src="img/btn-menu.png"/></button>
+                    <div id="elements_container" >
+
+                    </div>
                 </div>
-                <div id="answers_container">
+                <div id="playground-container">
+                    <div id="narrator" onclick="Game.play_sound()">
+                        <div id="narrator-face">
+                            <img src="img/narrator.png" width="500" height="500"/>
+                            <div id="narrator-mouth"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="bottom-container">
+                    <div id="answers_container">
+                    </div>
+                    <button id="btn-bottom-right" onclick="Game.next_scenes()"><img src="img/btn-next.png"/></button>
                 </div>
             </div>
-            </div>
+        </div>
         
         <script src="js/JS.js"></script>
         <script src="js/Scene.js"></script>

@@ -3,6 +3,7 @@ var Game = {
      given_answer:[],
      selected_element: null,
      score: 0,
+     sound: new Audio("audio/background.mp3"),
      elements: [],
      answers: [],
      current_story: null,
@@ -13,6 +14,7 @@ var Game = {
          Game.selected_element = e.target.parentElement;
          Game.selected_element.style.border = "none";
          e.preventDefault();
+         document.getElementById('story-container').appendChild(Game.selected_element);
      },
      release_element: function(e){
          console.log(e);
@@ -67,6 +69,8 @@ var Game = {
      init: function(){
          
          Game.init_from_files();
+         Game.sound.loop = true;
+         Game.sound.play();
      }.bind(this),
      play: function(id){
          var s = Game.stories.find(function(story){
@@ -106,7 +110,10 @@ var Game = {
         b.onclick = function(){Game.play(story.path)};
         var i = document.createElement('img');
         i.src = story.image;
+        var d = document.createElement('div');
+        d.innerHTML = story.title;
         b.appendChild(i);
+        b.appendChild(d);
         document.getElementById("menu-buttons").appendChild(b);
     }
 };

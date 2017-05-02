@@ -13,6 +13,7 @@ var Scene = function(){
           if(this.sound){
                this.sound.play();
           }
+        document.getElementById('narrator-mouth').style.animationName = "mouth";
      },
     
     this.init = function(data){
@@ -20,7 +21,7 @@ var Scene = function(){
         this.sound = new Audio(data.sound);
         this.elements = [].slice.call(document.getElementById('elements_container').children);
         this.answers = [].slice.call(document.getElementById('answers_container').children).filter(function(i){return [].slice.call(i.classList).indexOf('drop') != -1;});
-        this.sound.onended = function(){document.getElementById('narrator-screen').style.display = "none";};
+        this.sound.onended = function(){document.getElementById('narrator-mouth').style.animationName = "";};
     };
     
     this.play = function(){
@@ -64,7 +65,7 @@ var Scene = function(){
         document.getElementById('menu-container').style.display = "none";
         document.getElementById('game-container').style.display = "block";
         this.play_sound();
-        document.getElementById('narrator-screen').style.display = "block";
+        //document.getElementById('narrator-screen').style.display = "block";
     };
     
     this.check_answers = function(){
