@@ -26,7 +26,6 @@ var Game = {
                  var rect2 = JS.element.get_rect(Game.selected_element);
                  return rect2.x > rect1.x && rect2.x < (rect1.x + rect1.w) && rect2.y > rect1.y && rect2.y < (rect1.y + rect1.h);
              }.bind(this));
-             console.log(position);
              if(position){
                  if(position.children.length > 0){
                      //fails because parent is story-container
@@ -40,11 +39,13 @@ var Game = {
                  Game.selected_element.style.position = 'relative';
                  document.getElementById('elements_container').appendChild(Game.selected_element);
              }
-             Game.given_answer = Game.answers.map(function(a){
-                 if(  [].slice.call(a.classList).indexOf('drop') != -1){
-                    return a.children[0] ? parseInt(a.children[0].attributes.data.value) : null;
-                 }
+             
+             var answer = Game.answers.filter(function(a){ return [].slice.call(a.classList).indexOf('drop') != -1});
+             answer = answer.map(function(a){
+                 console.log(a);
+                return a.children[0] ? parseInt(a.children[0].attributes.data.value) : null;
              });
+             Game.current_story.set_user_answer(answer);
 
          }
          Game.selected_element = null;
@@ -53,7 +54,7 @@ var Game = {
           var position = JS.mouse.move(e);
           if(Game.selected_element){
               JS.element.move(Game.selected_element, position.x-document.getElementById('story-container').offsetLeft, position.y+document.getElementById('elements_container').offsetTop);
-              console.log(Game.selected_element)
+          
           }
      },
      next_scene: function(){

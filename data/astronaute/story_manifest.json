@@ -1,0 +1,113 @@
+{
+    "title": "L'astronaute",
+    "image":"logo.png",
+    "path":"astronaute",
+    "lang":"fr",
+    "premium":false,
+    "scenes": [
+        {
+            "sound":"astronaute_1.mp3",
+            "words":[
+                { "label":"Il était une fois une" },
+                { "label":"fille",       "img":"girl",      "data":0 }
+            ]
+        },
+        {
+            "sound":"astronaute_2.mp3",
+            "words":[
+                { "label":"qui rêvait de devenir" },
+                { "label":"astronaute",       "img":"astronaute",      "data":0 },
+                { "label":" et de voyager dans" },
+                { "label":"l'espace",       "img":"space",      "data":1 }
+            ]
+        },
+        {
+            "sound":"astronaute_3.mp3",
+            "words":[
+                { "label":"Elle devait beaucoup apprendre à" },
+                { "label":"l'école",       "img":"school",      "data":0 },
+                { "label":", lire de " },
+                { "label":"livres",       "img":"book",      "data":1 },
+                { "label":"et faire du sport." }
+            ]
+        },
+        {
+            "sound":"astronaute_4.mp3",
+            "words":[
+                { "label":"Tous les soirs avant d'aller au" },
+                { "label":"lit",       "img":"bed",      "data":0 },
+                { "label":",elle éteignait la" },
+                { "label":"lumière",       "img":"light",      "data":1 },
+                { "label":"et prenait son " },
+                { "label":"téléscope",       "img":"telescope",      "data":2 }
+            ]
+        },
+        {
+            "sound":"astronaute_5.mp3",
+            "words":[
+                { "label":"Elle observait la" },
+                { "label":"lune",       "img":"moon",      "data":0 },
+                { "label":", les " },
+                { "label":"étoiles",       "img":"stars",      "data":1 },
+                { "label":"et les " },
+                { "label":"satellites",       "img":"satellite",      "data":2 },
+                { "label":" depuis sa chambre"}
+            ]
+        },
+        {
+            "sound":"astronaute_6.mp3",
+            "words":[
+                { "label":"A 18 ans, elle entra dans une" },
+                { "label":"école",       "img":"school",      "data":0 },
+                { "label":"spéciale pour les " },
+                { "label":"astronautes",       "img":"astronaute",      "data":1 }
+            ]
+        },
+        {
+            "sound":"astronaute_7.mp3",
+            "words":[
+                { "label":"Elle s'entrainait à conduire une " },
+                { "label":"fusée",       "img":"rocket",      "data":0 },
+                { "label":", à nager dans " },
+                { "label":"l'espace",       "img":"space",      "data":1 },
+                { "label":"comme dans une" },
+                { "label":"piscine",       "img":"pool",      "data":2 }
+            ]
+        },
+        {
+            "sound":"astronaute_8.mp3",
+            "words":[
+                { "label":"Un jour son rêve se réalisa, installée dans son" },
+                { "label":"siege",       "img":"chair",      "data":0 },
+                { "label":", les " },
+                { "label":"yeux",       "img":"eyes",      "data":1 },
+                { "label":"vers le " },
+                { "label":"ciel",       "img":"sky",      "data":2 },
+                { "label":", la" },
+                { "label":"fusée",       "img":"rocket",      "data":3 },
+                { "label":"allait décoller." }
+            ]
+        },
+        {
+            "sound":"astronaute_9.mp3",
+            "words":[
+                { "label":"Après un long voyage, elle voyait enfin la" },
+                { "label":"Terre",       "img":"earth",      "data":0 },
+                { "label":", le" },
+                { "label":"soleil",       "img":"sun",      "data":1 },
+                { "label":", la" },
+                { "label":"lune",       "img":"moon",      "data":2 },
+                { "label":"depuis " },
+                { "label":"l'espace",       "img":"l'",      "data":3 }
+            ]
+        },
+        {
+            "sound":"astronaute_10.mp3",
+            "words":[
+                { "label":"Quand on y met tout notre" },
+                { "label":"coeur",       "img":"heart",      "data":0 },
+                { "label":", nos rêves se réalisent" }
+            ]
+        }
+    ] 
+}

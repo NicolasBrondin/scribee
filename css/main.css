@@ -1,7 +1,6 @@
 body, html {
     background: #ecf0f1;
     font-family: Roboto,Helvetica,Arial;
-
     width:100vw;
     height:100vh;
     overflow: hidden;
@@ -38,9 +37,9 @@ body, html {
 
 @keyframes mouth {
     0% {transform: scale(1,1)}
-    25% {transform: scale(1,1.2)}
-    50% {transform: scale(1,1.1)}
-    75% {transform: scale(1,1.3)}
+    25% {transform: scale(1,1.7)}
+    50% {transform: scale(1,1.3)}
+    75% {transform: scale(1,2)}
     100% {transform: scale(1,1)}
 
 }
@@ -73,7 +72,7 @@ display: inline-block;
     width: 15%;
     opacity: 0.5;
     background: black;
-    height: 5%;
+    height: 3%;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
     position: absolute;

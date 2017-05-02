@@ -20,7 +20,7 @@ var Story = function(){
         data.scenes.forEach(function(scene){
             var s = new Scene();
             scene.sound = 'data/'+data.path+'/'+scene.sound;
-            s.init(scene);
+            s.init(this, scene);
             this.scenes.push(s);
         }.bind(this));
     };
@@ -28,6 +28,10 @@ var Story = function(){
     this.play = function(){
         this.current_scene = this.scenes[0];
         this.current_scene.play();
+    };
+    
+    this.set_user_answer = function(answers){
+        this.current_scene.set_user_answer(answers);
     };
     
     this.next_scene = function(){
