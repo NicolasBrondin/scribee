@@ -8,8 +8,6 @@ var Scene = function(){
     this.words=[];
     
     this.play_sound = function() {
-        console.log("lol");
-        console.log(this.sound);
           if(this.sound){
                this.sound.play();
           }

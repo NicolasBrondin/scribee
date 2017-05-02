@@ -175,6 +175,9 @@ background-size: 500px;
 #story-container #top-container {
     height: 130px;
 overflow: hidden;
+    background: white;
+background-repeat: repeat-x;
+background-size: auto 100%;
 }
 
 #story-container #bottom-container {
@@ -182,7 +185,9 @@ overflow: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
-
+background: white;
+background-repeat: repeat-x;
+background-size: auto 100%;
 }
 
 #top-container #btn-top-left{
@@ -241,14 +246,12 @@ height: 120px;
 padding-bottom: 5px;
 padding-top: 5px;
 white-space: nowrap;
-    background: white;
 }
 
 
 #answers_container {
 position: relative;
 text-align: left;
-background: white;
 width: calc(100% - 130px);
 height: 130px;
 padding-top: 5px;

@@ -1,6 +1,7 @@
 var Game = {
      stories: [],
      given_answer:[],
+     selected_element_parent: null,
      selected_element: null,
      score: 0,
      sound: new Audio("audio/background.mp3"),
@@ -12,43 +13,34 @@ var Game = {
      },
      pick_element: function(e){
          Game.selected_element = e.target.parentElement;
+         Game.selected_element_parent = Game.selected_element.parentElement;
          Game.selected_element.style.border = "none";
          e.preventDefault();
          document.getElementById('story-container').appendChild(Game.selected_element);
      },
      release_element: function(e){
-         console.log(e);
          if(Game.selected_element){
              //Need to check position
-             console.log(Game.answers);
-             var position = Game.answers.find(function(a){
+             var position = Game.answers.filter(function(a){return [].slice.call(a.classList).indexOf('drop') != -1}).find(function(a){
                  var rect1 = JS.element.get_rect(a);
                  var rect2 = JS.element.get_rect(Game.selected_element);
-                 //console.log(rect1, rect2);
                  return rect2.x > rect1.x && rect2.x < (rect1.x + rect1.w) && rect2.y > rect1.y && rect2.y < (rect1.y + rect1.h);
              }.bind(this));
              console.log(position);
-             if(position && [].slice.call(position.classList).indexOf('drop') != -1){
+             if(position){
                  if(position.children.length > 0){
-                    position.children[0].style.margin = "5px";
-                    position.children[0].style.border = "none";
-                     Game.selected_element.parentElement.appendChild(position.children[0]);
+                     //fails because parent is story-container
+                     Game.selected_element_parent.appendChild(position.children[0]);
                  }
                  JS.element.move(Game.selected_element,0,0);
                  Game.selected_element.style.position = 'relative';
                  position.appendChild(Game.selected_element);
-                 Game.selected_element.style.margin = "5px";
-               /* Game.selected_element.style.left = JS.element.get_rect(position).x; 
-                Game.selected_element.style.top = JS.element.get_rect(position).y; */
-                 //console.log(Game.selected_element);
              } else {
                  JS.element.move(Game.selected_element,0,0);
                  Game.selected_element.style.position = 'relative';
                  document.getElementById('elements_container').appendChild(Game.selected_element);
              }
-             console.log(Game.answers);
              Game.given_answer = Game.answers.map(function(a){
-                 console.log(a);
                  if(  [].slice.call(a.classList).indexOf('drop') != -1){
                     return a.children[0] ? parseInt(a.children[0].attributes.data.value) : null;
                  }
@@ -59,8 +51,9 @@ var Game = {
      }.bind(this),
      move_element: function(e){
           var position = JS.mouse.move(e);
-          if(this.selected_element){
-              JS.element.move(this.selected_element, position.x-document.getElementById('story-container').offsetLeft, position.y+document.getElementById('elements_container').offsetTop);
+          if(Game.selected_element){
+              JS.element.move(Game.selected_element, position.x-document.getElementById('story-container').offsetLeft, position.y+document.getElementById('elements_container').offsetTop);
+              console.log(Game.selected_element)
           }
      },
      next_scene: function(){
@@ -93,7 +86,6 @@ var Game = {
                             var s = new Story();
                             s.init(story);
                             Game.stories.push(s);
-                            console.log(Game.stories);
                             Game.add_menu_story(s);
                         } else {
                             console.error("Error while loading story at path", story_path);

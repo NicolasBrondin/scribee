@@ -25,7 +25,9 @@ var JS = {
              element.style.top = y+"px";
         },
         get_rect: function(element){
-            return {x: element.offsetLeft, y: element.offsetTop, w: element.offsetWidth, h: element.offsetHeight};
+            var b = element.getBoundingClientRect();
+            //return {x: element.offsetLeft + element.scrollLeft + element.parentElement.offsetLeft, y: element.offsetTop + element.scrollTop  + element.parentElement.offsetTop, w: element.offsetWidth, h: element.offsetHeight};
+            return {x: b.left, y: b.top, w: b.width, h: b.height};
         }
     },
     file: {
