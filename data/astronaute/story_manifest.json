@@ -37,7 +37,7 @@
                 { "label":"Tous les soirs avant d'aller au" },
                 { "label":"lit",       "img":"bed",      "data":0 },
                 { "label":",elle éteignait la" },
-                { "label":"lumière",       "img":"light",      "data":1 },
+                { "label":"lumière",       "img":"lamp",      "data":1 },
                 { "label":"et prenait son " },
                 { "label":"téléscope",       "img":"telescope",      "data":2 }
             ]
@@ -98,7 +98,7 @@
                 { "label":", la" },
                 { "label":"lune",       "img":"moon",      "data":2 },
                 { "label":"depuis " },
-                { "label":"l'espace",       "img":"l'",      "data":3 }
+                { "label":"l'espace",       "img":"space",      "data":3 }
             ]
         },
         {
