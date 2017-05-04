@@ -32,7 +32,7 @@ body, html {
 }
 
 #splash-screen img {
-    margin-top: calc((50vh - 250px));
+    margin-top: calc((50vh - 125px));
 }
 
 @keyframes mouth {
@@ -54,7 +54,7 @@ body, html {
 #narrator{
 height: 100%;
 overflow: hidden;
-width: 50%;
+display: inline-block;
     
 }
 
@@ -171,150 +171,422 @@ background-size: 500px;
     height: 100vh;
 }
 
-#story-container #top-container {
-    height: 130px;
-overflow: hidden;
-    background: url('../img/wood-background.png');
-background-repeat: repeat-x;
-background-size: auto 100%;
-}
 
-#story-container #bottom-container {
+@media only screen and (min-height: 500px) {
+    #story-container #top-container {
         height: 130px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-background: url('../img/wood-background.png');
-background-repeat: repeat-x;
-background-size: auto 100%;
+        overflow: hidden;
+        background: url('../img/wood-background.png');
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+    }
+
+    #story-container #bottom-container {
+        height: 130px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: url('../img/wood-background.png');
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+    }
+    
+    #top-container #btn-top-left{
+        height: 130px;
+        position: relative;
+        float: left;
+        width: 130px;
+        padding:0;
+        border: none;
+        cursor: pointer;
+    }
+    
+    
+    #bottom-container #btn-bottom-right{
+        height: 130px;
+        position: relative;
+        float: left;
+        width: 130px;
+        padding:0;
+        border: none;
+        cursor: pointer;
+    }
+    
+    
+    #elements_container {
+        position: relative;
+        text-align: left;
+        width: calc(100% - 130px);
+        overflow-y: hidden;
+        overflow-x: auto;
+        height: 120px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        white-space: nowrap;
+    }
+
+
+    #answers_container {
+        position: relative;
+        text-align: left;
+        width: calc(100% - 130px);
+        height: 130px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+        float:left;
+    }
+
+    #playground-container {
+        height: calc(100% - 260px);
+        background: url('../img/background-playground.png');
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+        text-align: center;
+    }
+
+    .drag {
+        display:inline-block;
+        margin-left:5px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .drag img {
+        width:120px; height:120px;
+        vertical-align: top;
+    }
+
+    .drag.error div {
+        color:white;
+        background: #e74c3c;
+    }
+
+    .drag div {
+        position:relative;
+        background: #ecf0f1;
+        margin:0;
+        padding:0;
+        margin-top: -20px;
+        height:20px;
+        text-align:center;
+        font-weight:bold;
+        color:black;
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .slot {
+        display: inline-block;
+        height: 120px;
+        margin-left: 5px;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .slot .drag{
+        margin:0;
+    }
+
+    .slot>p {
+        line-height: 120px;
+        vertical-align: text-bottom;
+        padding: 0;
+        margin: 0;
+        font-size: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color:white;
+    }
+
+    .drop {
+        background: #bdc3c7; 
+        width: 120px;
+    }
 }
 
-#top-container #btn-top-left{
-    height: 130px;
-position: relative;
-float: left;
-width: 130px;
-    padding:0;
-    border: none;
-    cursor: pointer;
+
+
+@media only screen and (min-height: 500px) and (max-height: 800px) {
+    #story-container #top-container {
+        height: 90px;
+        overflow: hidden;
+        background: url('../img/wood-background.png');
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+    }
+
+    #story-container #bottom-container {
+        height: 90px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: url('../img/wood-background.png');
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+    }
+    
+    #top-container #btn-top-left{
+        height: 90px;
+        position: relative;
+        float: left;
+        width: 90px;
+        padding:0;
+        border: none;
+        cursor: pointer;
+    }
+    
+    
+    #bottom-container #btn-bottom-right{
+        height: 90px;
+        position: relative;
+        float: left;
+        width: 90px;
+        padding:0;
+        border: none;
+        cursor: pointer;
+    }
+    
+    
+    #elements_container {
+        position: relative;
+        text-align: left;
+        width: calc(100% - 90px);
+        overflow-y: hidden;
+        overflow-x: auto;
+        height: 90px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        white-space: nowrap;
+    }
+
+
+    #answers_container {
+        position: relative;
+        text-align: left;
+        width: calc(100% - 90px);
+        height: 90px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+        float:left;
+    }
+
+    #playground-container {
+        height: calc(100% - 180px);
+        background: url('../img/background-playground.png');
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+        text-align: center;
+    }
+
+    .drag {
+        display:inline-block;
+        margin-left:5px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .drag img {
+        width:80px; height:80px;
+        vertical-align: top;
+    }
+
+    .drag.error div {
+        color:white;
+        background: #e74c3c;
+    }
+
+    .drag div {
+        position:relative;
+        background: #ecf0f1;
+        margin:0;
+        padding:0;
+        margin-top: -20px;
+        height:20px;
+        text-align:center;
+        font-weight:bold;
+        color:black;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .slot {
+        display: inline-block;
+        height: 80px;
+        margin-left: 5px;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .slot .drag{
+        margin:0;
+    }
+
+    .slot>p {
+        line-height: 80px;
+        vertical-align: text-bottom;
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color:white;
+    }
+
+    .drop {
+        background: #bdc3c7; 
+        width: 80px;
+    }
 }
+
+
+@media only screen and (max-height: 500px) {
+    #story-container #top-container {
+        height: 60px;
+        overflow: hidden;
+        background: url('../img/wood-background.png');
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+    }
+
+    #story-container #bottom-container {
+        height: 60px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: url('../img/wood-background.png');
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+    }
+    
+    #top-container #btn-top-left{
+        height: 60px;
+        position: relative;
+        float: left;
+        width: 60px;
+        padding:0;
+        border: none;
+        cursor: pointer;
+    }
+    
+    
+    #bottom-container #btn-bottom-right{
+        height: 60px;
+        position: relative;
+        float: left;
+        width: 60px;
+        padding:0;
+        border: none;
+        cursor: pointer;
+    }
+    
+    
+    #elements_container {
+        position: relative;
+        text-align: left;
+        width: calc(100% - 60px);
+        overflow-y: hidden;
+        overflow-x: auto;
+        height: 60px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        white-space: nowrap;
+    }
+
+
+    #answers_container {
+        position: relative;
+        text-align: left;
+        width: calc(100% - 60px);
+        height: 60px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+        float:left;
+    }
+
+    #playground-container {
+        height: calc(100% - 120px);
+        background: url('../img/background-playground.png');
+        background-repeat: repeat-x;
+        background-size: auto 100%;
+        text-align: center;
+    }
+
+    .drag {
+        display:inline-block;
+        margin-left:5px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .drag img {
+        width:50px; height:50px;
+        vertical-align: top;
+    }
+
+    .drag.error div {
+        color:white;
+        background: #e74c3c;
+    }
+
+    .drag div {
+        position:relative;
+        background: #ecf0f1;
+        margin:0;
+        padding:0;
+        margin-top: -20px;
+        height:20px;
+        text-align:center;
+        font-weight:bold;
+        color:black;
+        font-size: 10px;
+        line-height: 20px;
+    }
+
+    .slot {
+        display: inline-block;
+        height: 50px;
+        margin-left: 5px;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .slot .drag{
+        margin:0;
+    }
+
+    .slot>p {
+        line-height: 50px;
+        vertical-align: text-bottom;
+        padding: 0;
+        margin: 0;
+        font-size: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color:white;
+    }
+
+    .drop {
+        background: #bdc3c7; 
+        width: 50px;
+    }
+}
+
 
 #top-container #btn-top-left img {
     width:100%;
     height: 100%;
 }
 
-#bottom-container #btn-bottom-right{
-    height: 130px;
-position: relative;
-float: left;
-width: 130px;
-    padding:0;
-    border: none;
-    cursor: pointer;
-}
-
 #bottom-container #btn-bottom-right img {
     width:100%;
     height: 100%;
-}
-/*
-#game-container #buttons-container button {
-    position: absolute;
-    background: #f39c12;
-    border: none;
-    width:100px;
-    height:100px;
-    padding: 0;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 400;
-    font-size: 16px;
-    color: white;
-    box-shadow: 0px 3px 0px #d35400;
-}*/
-
-
-#elements_container {
-    position: relative;
-text-align: left;
-width: calc(100% - 130px);
-overflow-y: hidden;
-overflow-x: auto;
-height: 120px;
-padding-bottom: 5px;
-padding-top: 5px;
-white-space: nowrap;
-}
-
-
-#answers_container {
-position: relative;
-text-align: left;
-width: calc(100% - 130px);
-height: 130px;
-padding-top: 5px;
-padding-bottom: 5px;
-overflow-y: hidden;
-overflow-x: auto;
-white-space: nowrap;
-    float:left;
-}
-
-#playground-container {
-    height: calc(100% - 260px);
-    background: url('../img/background-playground.png');
-background-repeat: repeat-x;
-background-size: auto 100%;
-}
-
-.drag {
-    display:inline-block;
-    margin-left:5px;
-    box-sizing: border-box;
-}
-
-.drag img {
-    width:100px; height:100px;
-    vertical-align: top;
-}
-
-.drag.error div {
-    color:white;
-    background: #e74c3c;
-}
-
-.drag div {
-    position:relative;
-    background: #ecf0f1;
-    margin:0;
-    padding:0;
-    height:20px;
-    text-align:center;
-    font-weight:bold;
-    color:black;
-}
-
-.slot {
-    display: inline-block;
-height: 120px;
-margin-left: 5px;
-overflow: hidden;
-padding: 0;
-}
-
-.slot>p {
-line-height: 120px;
-vertical-align: text-bottom;
-padding: 0;
-margin: 0;
-font-size: 20px;
-padding-left: 10px;
-padding-right: 10px;
-    color:white;
-}
-
-.drop {
-    background: #bdc3c7; 
-    width: 110px;
 }

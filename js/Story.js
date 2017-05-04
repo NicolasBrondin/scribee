@@ -38,10 +38,12 @@ var Story = function(){
         var result = this.current_scene.check_answers();  
         if(result) {
             this.current_scene.stop();
-            this.current_scene = this.scenes[this.scenes.indexOf(this.current_scene)+1];
-            this.current_scene.play();
-        } else {
-            
+            if(this.scenes[this.scenes.indexOf(this.current_scene)+1]){
+                this.current_scene = this.scenes[this.scenes.indexOf(this.current_scene)+1];
+                this.current_scene.play();
+            } else {
+                Game.show_menu();
+            }
         }
     };
     
