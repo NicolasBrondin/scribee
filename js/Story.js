@@ -6,7 +6,7 @@ var Story = function(){
     this.path;
     this.scenes = [];
     this.current_scene;  
-    
+    this.tutorial_timer;
     this.play_sound = function(){
         this.current_scene.play_sound();
     };
@@ -25,9 +25,55 @@ var Story = function(){
         }.bind(this));
     };
     
+    this.show_tutorial = function(){
+        
+        //Getting ui elements
+        var hand = document.getElementById('cursor-hand');
+        hand.style.visibility = 'visible';
+        var hand_position = hand.getBoundingClientRect();
+        var element_position = Game.elements[0].getBoundingClientRect();
+        var drop_position = Game.answers[1].getBoundingClientRect();//to be changed
+        
+        //Set hand position equals to first card position
+        JS.element.move(hand, element_position.x + element_position.width, element_position.y + element_position.height);
+        
+        //Distance and vector calculation
+        var delta_x = drop_position.x + drop_position.width  - hand_position.x;
+        var delta_y = drop_position.y -  hand_position.y ;
+        var ratio = delta_x / delta_y;
+        console.log(delta_x, delta_y);
+        var speed = 2;
+        var t = 0;
+        
+        //Every 20ms
+        this.tutorial_timer = setInterval(function(){
+            
+            //Update hand position
+            hand_position = hand.getBoundingClientRect();
+            if( (drop_position.y - hand_position.y) > 0 ){
+            JS.element.move(hand, element_position.x +  element_position.width + ( t * speed * ratio), element_position.y +( t * speed) + element_position.height);
+            
+            } else {
+                //If movement is finished, starts over
+                setTimeout(function(){t = 0; JS.element.move(hand, element_position.x + element_position.width,element_position.y+ element_position.height);},1000);
+            }
+            t++;
+        },10)  ;
+    }.bind(this);
+    
+    this.hide_tutorial = function(){
+        clearInterval(this.tutorial_timer);
+        document.getElementById('cursor-hand').style.visibility = 'hidden';
+    };
+    
     this.play = function(){
         this.current_scene = this.scenes[0];
         this.current_scene.play();
+        var hand = document.getElementById('cursor-hand');
+        var element_position = Game.elements[0].getBoundingClientRect();
+        JS.element.move(hand, element_position.x + element_position.width, element_position.y + element_position.height);
+        setTimeout(this.show_tutorial,1000);
+        
     };
     
     this.set_user_answer = function(answers){

@@ -13,10 +13,14 @@ var Game = {
      },
      pick_element: function(e){
          Game.selected_element = e.target.parentElement;
+          var position = JS.mouse.move(e);
+              JS.element.move(Game.selected_element, position.x-document.getElementById('story-container').offsetLeft, position.y+document.getElementById('elements_container').offsetTop);
+          
          Game.selected_element_parent = Game.selected_element.parentElement;
          JS.element.remove_class(Game.selected_element, "error");
          e.preventDefault();
          document.getElementById('story-container').appendChild(Game.selected_element);
+         this.current_story.hide_tutorial();
      },
      release_element: function(e){
          if(Game.selected_element){

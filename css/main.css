@@ -8,6 +8,11 @@ body, html {
     margin: 0;
 }  
 
+button:focus{
+    border:none;
+    box-shadow: none;
+}
+
 @keyframes splash {
     0% {opacity: 1;visibility: visible;}
     50% {opacity: 1;visibility: visible;}
@@ -172,7 +177,7 @@ background-size: 500px;
 }
 
 
-@media only screen and (min-height: 500px) {
+@media only screen and (min-height: 800px) {
     #story-container #top-container {
         height: 130px;
         overflow: hidden;
@@ -252,6 +257,7 @@ background-size: 500px;
         margin-left:5px;
         box-sizing: border-box;
         overflow: hidden;
+        cursor:pointer;
     }
 
     .drag img {
@@ -389,6 +395,7 @@ background-size: 500px;
         margin-left:5px;
         box-sizing: border-box;
         overflow: hidden;
+        cursor:pointer;
     }
 
     .drag img {
@@ -525,6 +532,7 @@ background-size: 500px;
         margin-left:5px;
         box-sizing: border-box;
         overflow: hidden;
+        cursor: pointer;
     }
 
     .drag img {
