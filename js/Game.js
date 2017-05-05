@@ -14,7 +14,7 @@ var Game = {
      pick_element: function(e){
          Game.selected_element = e.target.parentElement;
           var position = JS.mouse.move(e);
-              JS.element.move(Game.selected_element, position.x-document.getElementById('story-container').offsetLeft, position.y+document.getElementById('elements_container').offsetTop);
+              JS.element.move(Game.selected_element, position.x-document.getElementById('story-container').offsetLeft - (Game.selected_element.getBoundingClientRect().width/2), position.y+document.getElementById('elements_container').offsetTop - (Game.selected_element.getBoundingClientRect().height/2));
           
          Game.selected_element_parent = Game.selected_element.parentElement;
          JS.element.remove_class(Game.selected_element, "error");
@@ -28,7 +28,7 @@ var Game = {
              var position = Game.answers.filter(function(a){return [].slice.call(a.classList).indexOf('drop') != -1}).find(function(a){
                  var rect1 = JS.element.get_rect(a);
                  var rect2 = JS.element.get_rect(Game.selected_element);
-                 return rect2.x > rect1.x && rect2.x < (rect1.x + rect1.w) && rect2.y > rect1.y && rect2.y < (rect1.y + rect1.h);
+                 return (rect2.x + (rect2.w/2)) > (rect1.x - 40) && (rect2.x + (rect2.w/2)) < (rect1.x + rect1.w +40) && (rect2.y + (rect2.h/2)) > (rect1.y-40) && (rect2.y + (rect2.h/2)) < (rect1.y + rect1.h + 40);
              }.bind(this));
              if(position){
                  if(position.children.length > 0){
@@ -59,7 +59,7 @@ var Game = {
      move_element: function(e){
           var position = JS.mouse.move(e);
           if(Game.selected_element){
-              JS.element.move(Game.selected_element, position.x-document.getElementById('story-container').offsetLeft, position.y+document.getElementById('elements_container').offsetTop);
+              JS.element.move(Game.selected_element, position.x-document.getElementById('story-container').offsetLeft - (Game.selected_element.getBoundingClientRect().width/2), position.y+document.getElementById('elements_container').offsetTop - (Game.selected_element.getBoundingClientRect().height/2));
           
           }
      },
