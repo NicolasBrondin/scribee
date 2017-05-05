@@ -108,7 +108,7 @@ background-size: 500px;
     vertical-align: text-top;
     padding-bottom: 25px;
     left: calc(50% - 125px);
-    z-index: 999;
+    z-index: 998;
 }
 #menu-buttons {
     padding-left:25px;
