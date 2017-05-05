@@ -4,15 +4,26 @@ var Game = {
      selected_element_parent: null,
      selected_element: null,
      score: 0,
-     sound: new Audio("audio/background.mp3"),
+     sounds: {
+         background: new Audio("audio/background.mp3"),
+         drag: new Audio("audio/drag.mp3"),
+         drop: new Audio("audio/drop.mp3"),
+         success: new Audio("audio/success.mp3"),
+         fail: new Audio("audio/fail.mp3")
+     },
      elements: [],
      answers: [],
      current_story: null,
-     play_sound: function() {
+     play_voice: function() {
           this.current_story.play_sound();
+     },
+     play_sound: function(id){
+         this.sounds[id].play();
      },
      pick_element: function(e){
          Game.selected_element = e.target.parentElement;
+         
+         Game.play_sound('drag');
           var position = JS.mouse.move(e);
               JS.element.move(Game.selected_element, position.x-document.getElementById('story-container').offsetLeft - (Game.selected_element.getBoundingClientRect().width/2), position.y+document.getElementById('elements_container').offsetTop - (Game.selected_element.getBoundingClientRect().height/2));
           
@@ -30,7 +41,10 @@ var Game = {
                  var rect2 = JS.element.get_rect(Game.selected_element);
                  return (rect2.x + (rect2.w/2)) > (rect1.x - 40) && (rect2.x + (rect2.w/2)) < (rect1.x + rect1.w +40) && (rect2.y + (rect2.h/2)) > (rect1.y-40) && (rect2.y + (rect2.h/2)) < (rect1.y + rect1.h + 40);
              }.bind(this));
+              
              if(position){
+                 
+                Game.play_sound('drag');
                  if(position.children.length > 0){
                      //fails because parent is story-container
                      JS.element.remove_class(position.children[0], "error");
@@ -41,6 +55,7 @@ var Game = {
                  Game.selected_element.style.position = 'relative';
                  position.appendChild(Game.selected_element);
              } else {
+                 Game.play_sound('drop');
                  JS.element.move(Game.selected_element,0,0);
                  Game.selected_element.style.position = 'relative';
                  document.getElementById('elements_container').appendChild(Game.selected_element);
@@ -69,8 +84,8 @@ var Game = {
      init: function(){
          
          Game.init_from_files();
-         Game.sound.loop = true;
-         Game.sound.play();
+         Game.sounds.background.loop = true;
+         Game.play_sound('background');
      }.bind(this),
      play: function(id){
          var s = Game.stories.find(function(story){

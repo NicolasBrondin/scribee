@@ -99,8 +99,11 @@ document.getElementById('answers_container').innerHTML = "";
             }
         }.bind(this));
         if(!err){
+             Game.play_sound('success');
             return true;
+            
         } else {
+             Game.play_sound('fail');
             return false;
         }
 
