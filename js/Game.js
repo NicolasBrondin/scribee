@@ -85,13 +85,13 @@ var Game = {
          
          Game.init_from_files();
          Game.sounds.background.loop = true;
-         Game.play_sound('background');
      }.bind(this),
      play: function(id){
          var s = Game.stories.find(function(story){
              return id === story.path;
          });
          Game.current_story = s;
+         Game.play_sound('background');
          Game.current_story.play();
      }.bind(this),
     show_menu : function(){

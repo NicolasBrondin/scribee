@@ -39,6 +39,13 @@ var JS = {
         }
     },
     element: {
+        refactor_bounding: function(b){
+            if(b.x != null){
+                return b;
+            } else {
+                return { x: b.left, y: b.top, width: b.width, height: b.height };
+            }
+        },
         add_class: function(element, c){
             element.classList += " "+c;  
         },

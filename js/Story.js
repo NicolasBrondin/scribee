@@ -30,10 +30,12 @@ var Story = function(){
         //Getting ui elements
         var hand = document.getElementById('cursor-hand');
         hand.style.visibility = 'visible';
-        var hand_position = hand.getBoundingClientRect();
-        var element_position = Game.elements[0].getBoundingClientRect();
-        var drop_position = Game.answers[1].getBoundingClientRect();//to be changed
-        
+        var hand_position = JS.element.refactor_bounding(hand.getBoundingClientRect());
+        var element_position = JS.element.refactor_bounding(Game.elements[0].getBoundingClientRect());
+        var drop_position = JS.element.refactor_bounding(Game.answers[1].getBoundingClientRect());//to be changed
+        console.log(hand_position);
+        console.log(element_position);
+        console.log(drop_position);
         //Set hand position equals to first card position
         JS.element.move(hand, element_position.x + element_position.width, element_position.y + element_position.height);
         
@@ -49,7 +51,7 @@ var Story = function(){
         this.tutorial_timer = setInterval(function(){
             
             //Update hand position
-            hand_position = hand.getBoundingClientRect();
+            hand_position = JS.element.refactor_bounding(hand.getBoundingClientRect());
             if( (drop_position.y - hand_position.y) > 0 ){
             JS.element.move(hand, element_position.x +  element_position.width + ( t * speed * ratio), element_position.y +( t * speed) + element_position.height);
             
@@ -70,7 +72,10 @@ var Story = function(){
         this.current_scene = this.scenes[0];
         this.current_scene.play();
         var hand = document.getElementById('cursor-hand');
-        var element_position = Game.elements[0].getBoundingClientRect();
+        var element_position = JS.element.refactor_bounding(Game.elements[0].getBoundingClientRect());
+        console.log(element_position);
+        console.log( element_position.x + element_position.width,  element_position.y + element_position.height)
+        
         JS.element.move(hand, element_position.x + element_position.width, element_position.y + element_position.height);
         setTimeout(this.show_tutorial,1000);
         
