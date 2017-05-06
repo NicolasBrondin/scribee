@@ -202,6 +202,7 @@ button:focus{
     padding:0;
     border: none;
     cursor: pointer;
+    background: none;
 }
 
 #bottom-container #btn-bottom-right{
@@ -210,6 +211,7 @@ button:focus{
     padding:0;
     border: none;
     cursor: pointer;
+    background: none;
 }
 
 #elements_container {
@@ -281,6 +283,7 @@ cursor: pointer;
         margin-left: 5px;
         overflow: hidden;
         padding: 0;
+        background: #ecf0f1;
     }
 
     .slot .drag{
@@ -293,11 +296,12 @@ cursor: pointer;
         margin: 0;
         padding-left: 10px;
         padding-right: 10px;
-        color:white;
+        color:#333;
+        font-weight: bold;
     }
 
-    .drop {
-        background: #bdc3c7; 
+    .slot.drop {
+        background: #7f8c8d; 
     }
 
 
