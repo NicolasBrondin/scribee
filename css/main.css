@@ -56,6 +56,8 @@ button:focus{
 
 #narrator{
     height: 100%;
+    width:50%;
+    float:left;
     overflow: hidden;
     display: inline-block;
 }
@@ -87,16 +89,12 @@ button:focus{
 #menu-container {
     display: block;
     background: url('../img/background.png');
-background-repeat: repeat;
-background-size: 500px;
+    background-repeat: repeat;
+    background-size: 500px;
     height: 100vh;
     width: 100vw;
 }
-/*
-#menu-title {
-    width:100%;
-    text-align:center;
-}*/
+
 #menu-container h1 {
     position: absolute;
     background: url('../img/ribbon.png') 0% 0% / 100% 100%;
@@ -110,6 +108,7 @@ background-size: 500px;
     left: calc(50% - 125px);
     z-index: 998;
 }
+
 #menu-buttons {
     padding-left:25px;
     padding-right:25px;
@@ -136,6 +135,11 @@ background-size: 500px;
     animation-delay: 0s;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+}
+
+#menu-buttons button.disabled {
+    opacity: 0.7;
+    cursor: default;
 }
 
 #menu-buttons button img {
@@ -176,66 +180,56 @@ background-size: 500px;
     height: 100vh;
 }
 
+#story-container #top-container {
+    overflow: hidden;
+    background: url('../img/shelf.png');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+}
 
-@media only screen and (min-height: 800px) {
-    #story-container #top-container {
-        height: 130px;
-        overflow: hidden;
-        background: url('../img/wood-background.png');
-        background-repeat: repeat-x;
-        background-size: auto 100%;
-    }
+#story-container #bottom-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('../img/wood-background.png');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+}
+    
+#bottom-container #btn-top-left{
+    position: relative;
+    float: left;
+    padding:0;
+    border: none;
+    cursor: pointer;
+}
 
-    #story-container #bottom-container {
-        height: 130px;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        background: url('../img/wood-background.png');
-        background-repeat: repeat-x;
-        background-size: auto 100%;
-    }
-    
-    #top-container #btn-top-left{
-        height: 130px;
+#bottom-container #btn-bottom-right{
+    position: relative;
+    float: left;
+    padding:0;
+    border: none;
+    cursor: pointer;
+}
+
+#elements_container {
         position: relative;
-        float: left;
-        width: 130px;
-        padding:0;
-        border: none;
-        cursor: pointer;
-    }
-    
-    
-    #bottom-container #btn-bottom-right{
-        height: 130px;
-        position: relative;
-        float: left;
-        width: 130px;
-        padding:0;
-        border: none;
-        cursor: pointer;
-    }
-    
-    
-    #elements_container {
-        position: relative;
-        text-align: left;
-        width: calc(100% - 130px);
-        overflow-y: hidden;
-        overflow-x: auto;
-        height: 120px;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        white-space: nowrap;
+text-align: left;
+
+overflow-y: hidden;
+overflow-x: auto;
+padding-bottom: 5px;
+padding-top: 5px;
+display: inline-block;
+background: url('../img/shelf.png');
+background-position: center;
+background-size: 100% 33.3%;
     }
 
 
     #answers_container {
         position: relative;
         text-align: left;
-        width: calc(100% - 130px);
-        height: 130px;
         padding-top: 5px;
         padding-bottom: 5px;
         overflow-y: hidden;
@@ -245,23 +239,22 @@ background-size: 500px;
     }
 
     #playground-container {
-        height: calc(100% - 260px);
-        background: url('../img/background-playground.png');
+        //background: url('../img/background-playground.png');
+        background: #795c30;
         background-repeat: repeat-x;
         background-size: auto 100%;
         text-align: center;
     }
 
     .drag {
-        display:inline-block;
-        margin-left:5px;
-        box-sizing: border-box;
-        overflow: hidden;
-        cursor:pointer;
+        display: inline-block;
+margin-left: 5px;
+box-sizing: border-box;
+overflow: hidden;
+cursor: pointer;
     }
 
     .drag img {
-        width:120px; height:120px;
         vertical-align: top;
     }
 
@@ -280,13 +273,11 @@ background-size: 500px;
         text-align:center;
         font-weight:bold;
         color:black;
-        font-size: 20px;
         line-height: 20px;
     }
 
     .slot {
         display: inline-block;
-        height: 120px;
         margin-left: 5px;
         overflow: hidden;
         padding: 0;
@@ -297,11 +288,9 @@ background-size: 500px;
     }
 
     .slot>p {
-        line-height: 120px;
         vertical-align: text-bottom;
         padding: 0;
         margin: 0;
-        font-size: 20px;
         padding-left: 10px;
         padding-right: 10px;
         color:white;
@@ -309,287 +298,10 @@ background-size: 500px;
 
     .drop {
         background: #bdc3c7; 
-        width: 120px;
-    }
-}
-
-
-
-@media only screen and (min-height: 500px) and (max-height: 800px) {
-    #story-container #top-container {
-        height: 90px;
-        overflow: hidden;
-        background: url('../img/wood-background.png');
-        background-repeat: repeat-x;
-        background-size: auto 100%;
-    }
-
-    #story-container #bottom-container {
-        height: 90px;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        background: url('../img/wood-background.png');
-        background-repeat: repeat-x;
-        background-size: auto 100%;
-    }
-    
-    #top-container #btn-top-left{
-        height: 90px;
-        position: relative;
-        float: left;
-        width: 90px;
-        padding:0;
-        border: none;
-        cursor: pointer;
-    }
-    
-    
-    #bottom-container #btn-bottom-right{
-        height: 90px;
-        position: relative;
-        float: left;
-        width: 90px;
-        padding:0;
-        border: none;
-        cursor: pointer;
-    }
-    
-    
-    #elements_container {
-        position: relative;
-        text-align: left;
-        width: calc(100% - 90px);
-        overflow-y: hidden;
-        overflow-x: auto;
-        height: 90px;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        white-space: nowrap;
     }
 
 
-    #answers_container {
-        position: relative;
-        text-align: left;
-        width: calc(100% - 90px);
-        height: 90px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        overflow-y: hidden;
-        overflow-x: auto;
-        white-space: nowrap;
-        float:left;
-    }
-
-    #playground-container {
-        height: calc(100% - 180px);
-        background: url('../img/background-playground.png');
-        background-repeat: repeat-x;
-        background-size: auto 100%;
-        text-align: center;
-    }
-
-    .drag {
-        display:inline-block;
-        margin-left:5px;
-        box-sizing: border-box;
-        overflow: hidden;
-        cursor:pointer;
-    }
-
-    .drag img {
-        width:80px; height:80px;
-        vertical-align: top;
-    }
-
-    .drag.error div {
-        color:white;
-        background: #e74c3c;
-    }
-
-    .drag div {
-        position:relative;
-        background: #ecf0f1;
-        margin:0;
-        padding:0;
-        margin-top: -20px;
-        height:20px;
-        text-align:center;
-        font-weight:bold;
-        color:black;
-        font-size: 15px;
-        line-height: 20px;
-    }
-
-    .slot {
-        display: inline-block;
-        height: 80px;
-        margin-left: 5px;
-        overflow: hidden;
-        padding: 0;
-    }
-
-    .slot .drag{
-        margin:0;
-    }
-
-    .slot>p {
-        line-height: 80px;
-        vertical-align: text-bottom;
-        padding: 0;
-        margin: 0;
-        font-size: 15px;
-        padding-left: 10px;
-        padding-right: 10px;
-        color:white;
-    }
-
-    .drop {
-        background: #bdc3c7; 
-        width: 80px;
-    }
-}
-
-
-@media only screen and (max-height: 500px) {
-    #story-container #top-container {
-        height: 60px;
-        overflow: hidden;
-        background: url('../img/wood-background.png');
-        background-repeat: repeat-x;
-        background-size: auto 100%;
-    }
-
-    #story-container #bottom-container {
-        height: 60px;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        background: url('../img/wood-background.png');
-        background-repeat: repeat-x;
-        background-size: auto 100%;
-    }
-    
-    #top-container #btn-top-left{
-        height: 60px;
-        position: relative;
-        float: left;
-        width: 60px;
-        padding:0;
-        border: none;
-        cursor: pointer;
-    }
-    
-    
-    #bottom-container #btn-bottom-right{
-        height: 60px;
-        position: relative;
-        float: left;
-        width: 60px;
-        padding:0;
-        border: none;
-        cursor: pointer;
-    }
-    
-    
-    #elements_container {
-        position: relative;
-        text-align: left;
-        width: calc(100% - 60px);
-        overflow-y: hidden;
-        overflow-x: auto;
-        height: 60px;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        white-space: nowrap;
-    }
-
-
-    #answers_container {
-        position: relative;
-        text-align: left;
-        width: calc(100% - 60px);
-        height: 60px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        overflow-y: hidden;
-        overflow-x: auto;
-        white-space: nowrap;
-        float:left;
-    }
-
-    #playground-container {
-        height: calc(100% - 120px);
-        background: url('../img/background-playground.png');
-        background-repeat: repeat-x;
-        background-size: auto 100%;
-        text-align: center;
-    }
-
-    .drag {
-        display:inline-block;
-        margin-left:5px;
-        box-sizing: border-box;
-        overflow: hidden;
-        cursor: pointer;
-    }
-
-    .drag img {
-        width:50px; height:50px;
-        vertical-align: top;
-    }
-
-    .drag.error div {
-        color:white;
-        background: #e74c3c;
-    }
-
-    .drag div {
-        position:relative;
-        background: #ecf0f1;
-        margin:0;
-        padding:0;
-        margin-top: -20px;
-        height:20px;
-        text-align:center;
-        font-weight:bold;
-        color:black;
-        font-size: 10px;
-        line-height: 20px;
-    }
-
-    .slot {
-        display: inline-block;
-        height: 50px;
-        margin-left: 5px;
-        overflow: hidden;
-        padding: 0;
-    }
-
-    .slot .drag{
-        margin:0;
-    }
-
-    .slot>p {
-        line-height: 50px;
-        vertical-align: text-bottom;
-        padding: 0;
-        margin: 0;
-        font-size: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
-        color:white;
-    }
-
-    .drop {
-        background: #bdc3c7; 
-        width: 50px;
-    }
-}
-
-
-#top-container #btn-top-left img {
+#bottom-container #btn-top-left img {
     width:100%;
     height: 100%;
 }
@@ -602,3 +314,201 @@ background-size: 500px;
 #story-container>.drag {
     box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
 }
+
+
+
+@media only screen and (min-height: 800px) {
+    
+    #story-container #top-container {
+        height: 130px;
+    }
+
+    #story-container #bottom-container {
+        height: 130px;
+    }
+    
+    #bottom-container #btn-top-left{
+        height: 130px;
+        width: 130px;
+    }
+    
+    #bottom-container #btn-bottom-right{
+        height: 130px;
+        width: 130px;
+    }
+    
+    #elements_container {
+        //height: 120px;
+        width: 382px;
+        height: 567px;
+        margin-top: calc(50vh - 130px - 219px)
+    }
+
+    #answers_container {
+        width: calc(100% - 260px);
+        height: 130px;
+    }
+
+    #playground-container {
+        height: calc(100% - 130px);
+    }
+    
+    .drag { 
+        margin-top: 9px;
+        margin-bottom: 58px;
+    }
+
+    .drag img {
+        width:120px; height:120px;
+    }
+
+    .drag div {
+        font-size: 20px;
+    }
+
+    .slot {
+        height: 120px;
+    }
+    
+    .slot>p {
+        line-height: 120px;
+        font-size: 20px;
+    }
+    
+    .drop {
+        width: 120px;
+    }
+
+}
+
+
+
+@media only screen and (min-height: 500px) and (max-height: 800px) {
+    #story-container #top-container {
+        height: 90px;
+    }
+
+    #story-container #bottom-container {
+        height: 90px;
+    }
+    
+    #bottom-container #btn-top-left{
+        height: 90px;
+        width: 90px;
+    } 
+    
+    #bottom-container #btn-bottom-right{
+        height: 90px;
+        width: 90px;
+    }   
+    
+    #elements_container {
+        //height: 90px;
+        width: 263px;
+        height: 370px;
+        margin-top: calc(50vh - 90px - 140px);
+    }
+
+    #answers_container {
+        width: calc(100% - 180px);
+        height: 90px;
+    }
+
+    #playground-container {
+        height: calc(100% - 90px);
+    }
+    
+    .drag { 
+        margin-top: 2px;
+        margin-bottom: 40px;
+    }
+
+
+    .drag img {
+        width:80px; height:80px;
+    }
+
+    .drag div {
+        font-size: 15px;
+    }
+
+    .slot {
+        height: 80px;
+    }
+
+    .slot>p {
+        line-height: 80px;
+        font-size: 15px;
+    }
+
+    .drop {
+        width: 80px;
+    }
+}
+
+
+@media only screen and (max-height: 500px) {
+    #story-container #top-container {
+        height: 60px;
+    }
+
+    #story-container #bottom-container {
+        height: 60px;
+    }
+    
+    #bottom-container #btn-top-left{
+        height: 60px;
+        width: 60px;
+    }
+    
+    
+    #bottom-container #btn-bottom-right{
+        height: 60px;
+        width: 60px;
+    }
+    
+    
+    #elements_container {
+        //height: 60px;
+        width: 169px;
+        height: 300px;
+        margin-top:  calc(50vh - 60px - 130px)
+    }
+
+
+    #answers_container {
+        width: calc(100% - 120px);
+        height: 60px;
+    }
+
+    #playground-container {
+        height: calc(100% - 60px);
+    }
+    
+    .drag { 
+        margin-top: 16px;
+        margin-bottom: 32px;
+    }
+
+    .drag img {
+        width:50px; 
+        height:50px;
+    }
+
+    .drag div {
+        font-size: 10px;
+    }
+
+    .slot {
+        height: 50px;
+    }
+
+    .slot>p {
+        line-height: 50px;
+    }
+
+    .drop {
+        width: 50px;
+    }
+}
+

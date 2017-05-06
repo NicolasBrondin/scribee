@@ -25,7 +25,7 @@ var Game = {
          
          Game.play_sound('drag');
           var position = JS.mouse.move(e);
-              JS.element.move(Game.selected_element, position.x-document.getElementById('story-container').offsetLeft - (Game.selected_element.getBoundingClientRect().width/2), position.y+document.getElementById('elements_container').offsetTop - (Game.selected_element.getBoundingClientRect().height/2));
+              JS.element.move(Game.selected_element, position.x - document.getElementById('story-container').offsetLeft  - document.getElementById('game-container').offsetLeft - (Game.selected_element.getBoundingClientRect().width/2), position.y - document.getElementById('story-container').offsetTop - document.getElementById('game-container').offsetTop - (Game.selected_element.getBoundingClientRect().height/2));
           
          Game.selected_element_parent = Game.selected_element.parentElement;
          JS.element.remove_class(Game.selected_element, "error");
@@ -74,7 +74,7 @@ var Game = {
      move_element: function(e){
           var position = JS.mouse.move(e);
           if(Game.selected_element){
-              JS.element.move(Game.selected_element, position.x-document.getElementById('story-container').offsetLeft - (Game.selected_element.getBoundingClientRect().width/2), position.y+document.getElementById('elements_container').offsetTop - (Game.selected_element.getBoundingClientRect().height/2));
+              JS.element.move(Game.selected_element, position.x - document.getElementById('story-container').offsetLeft - document.getElementById('game-container').offsetLeft - (Game.selected_element.getBoundingClientRect().width/2), position.y - document.getElementById('story-container').offsetTop  - document.getElementById('game-container').offsetTop - (Game.selected_element.getBoundingClientRect().height/2));
           
           }
      },
@@ -109,6 +109,18 @@ var Game = {
                             s.init(story);
                             Game.stories.push(s);
                             Game.add_menu_story(s);
+                            
+                            if(Game.stories.length == data.stories.length){
+                                var b = document.createElement('button');
+                                b.classList = "disabled";
+                                var i = document.createElement('img');
+                                i.src = 'img/plus.png';
+                                var d = document.createElement('div');
+                                d.innerHTML = "Bientôt...";
+                                b.appendChild(i);
+                                b.appendChild(d);
+                                document.getElementById("menu-buttons").appendChild(b);
+                            }
                         } else {
                             console.error("Error while loading story at path", story_path);
                         }

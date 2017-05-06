@@ -18,14 +18,7 @@
         </div>
         <div id="game-container">
             <img id="cursor-hand" src="img/cursor-hand.png" height="100" style="position:absolute;z-index:2000;left:0px; top:0px;"/>
-            <!-- SEULEMENT 3 IMAGES -->
             <div id="story-container">
-                <div id="top-container" >
-                    <button id="btn-top-left" onclick="Game.show_menu()"><img src="img/btn-menu.png"/></button>
-                    <div id="elements_container" >
-
-                    </div>
-                </div>
                 <div id="playground-container">
                     <div id="narrator" onclick="Game.play_voice()">
                         <div id="narrator-face">
@@ -33,8 +26,12 @@
                             <div id="narrator-mouth"></div>
                         </div>
                     </div>
+                    <div id="elements_container" >
+
+                    </div>
                 </div>
                 <div id="bottom-container">
+                    <button id="btn-top-left" onclick="Game.show_menu()"><img src="img/btn-menu.png"/></button>
                     <div id="answers_container">
                     </div>
                     <button id="btn-bottom-right" onclick="Game.next_scene()"><img src="img/btn-next.png"/></button>
