@@ -4,6 +4,7 @@ var Game = {
      selected_element_parent: null,
      selected_element: null,
      score: 0,
+     music_playing: true,
      sounds: {
          background: new Audio("audio/background.mp3"),
          drag: new Audio("audio/drag.mp3"),
@@ -19,6 +20,20 @@ var Game = {
      },
      play_sound: function(id){
          this.sounds[id].play();
+     },
+     stop_sound: function(id){
+         this.sounds[id].pause();
+     },
+     toggle_background_sound: function(){
+         if(this.music_playing){
+             this.stop_sound('background');
+             document.getElementById('music-toggle').innerHTML = '<img src="img/btn-music-off.png"/>';
+         } else {
+             this.play_sound('background');
+             
+             document.getElementById('music-toggle').innerHTML = '<img src="img/btn-music.png"/>';
+         }
+         this.music_playing = !this.music_playing;
      },
      pick_element: function(e){
          Game.selected_element = e.target.parentElement;

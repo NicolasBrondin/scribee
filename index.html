@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <link rel="manifest" href="/manifest.json">
         <meta charset="utf-8"/>
         <link rel="icon" href="img/icon.png"/>
         <link rel="stylesheet" href="css/main.css"/>
@@ -17,6 +18,7 @@
             </div>
         </div>
         <div id="game-container">
+            <button id="music-toggle" onclick="Game.toggle_background_sound()"><img src="img/btn-music.png"/></button>
             <img id="cursor-hand" src="img/cursor-hand.png" height="100" style="position:absolute;z-index:2000;left:0px; top:0px;"/>
             <div id="story-container">
                 <div id="playground-container">
