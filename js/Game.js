@@ -4,7 +4,12 @@ var Game = {
      selected_element_parent: null,
      selected_element: null,
      score: 0,
-     music_playing: true,
+     settings: {
+         mute: false
+     },
+     progress: {
+        stories: []  
+     },
      sounds: {
          background: new Audio("audio/background.mp3"),
          drag: new Audio("audio/drag.mp3"),
@@ -19,21 +24,24 @@ var Game = {
           this.current_story.play_sound();
      },
      play_sound: function(id){
-         this.sounds[id].play();
+         if(id != 'background' || this.settings.mute == false){
+            this.sounds[id].play();
+         }
      },
      stop_sound: function(id){
          this.sounds[id].pause();
      },
      toggle_background_sound: function(){
-         if(this.music_playing){
+         this.settings.mute = !this.settings.mute;
+         if(!this.settings.mute){
+             this.play_sound('background');
+             document.getElementById('music-toggle').innerHTML = '<img src="img/btn-music.png"/>';
+         } else {
              this.stop_sound('background');
              document.getElementById('music-toggle').innerHTML = '<img src="img/btn-music-off.png"/>';
-         } else {
-             this.play_sound('background');
-             
-             document.getElementById('music-toggle').innerHTML = '<img src="img/btn-music.png"/>';
          }
-         this.music_playing = !this.music_playing;
+         
+         JS.local_storage.set("settings",this.settings);
      },
      pick_element: function(e){
          Game.selected_element = e.target.parentElement;
@@ -97,7 +105,8 @@ var Game = {
         this.current_story.next_scene();
      },
      init: function(){
-         
+         Game.settings = JS.local_storage.get("settings") || {mute:false};
+         Game.progress = JS.local_storage.get("progress") || {stories:[]};
          Game.init_from_files();
          Game.sounds.background.loop = true;
          Game.sounds.background.volume = 0.3;
@@ -107,7 +116,12 @@ var Game = {
              return id === story.path;
          });
          Game.current_story = s;
-         Game.play_sound('background');
+         if(Game.settings.mute == false){
+            Game.play_sound('background');
+             document.getElementById('music-toggle').innerHTML = '<img src="img/btn-music.png"/>';
+         }else {
+             document.getElementById('music-toggle').innerHTML = '<img src="img/btn-music-off.png"/>';
+         }
          Game.current_story.play();
      }.bind(this),
     show_menu : function(){
@@ -131,7 +145,9 @@ var Game = {
                                 b.classList = "disabled";
                                 var i = document.createElement('img');
                                 i.src = 'img/plus.png';
+                                i.classList = "story-image";
                                 var d = document.createElement('div');
+                                d.classList = "story-name";
                                 d.innerHTML = "Bientôt...";
                                 b.appendChild(i);
                                 b.appendChild(d);
@@ -150,12 +166,27 @@ var Game = {
     add_menu_story: function(story){
         var b = document.createElement('button');
         b.onclick = function(){Game.play(story.path)};
+        if(Game.progress.stories.indexOf(story.title) != -1){
+            b.classList = "finished";
+        }
         var i = document.createElement('img');
+        i.classList = "story-image";
         i.src = story.image;
         var d = document.createElement('div');
+        d.classList = "story-name";
         d.innerHTML = story.title;
+        var c = document.createElement('div');
+        c.classList = "story-check";
+        var ci = document.createElement('img');
+        ci.src = 'img/check.png';
+        c.appendChild(ci);
         b.appendChild(i);
         b.appendChild(d);
+        b.appendChild(c);
         document.getElementById("menu-buttons").appendChild(b);
+    },
+    finished_story: function(title){
+        this.progress.stories.push(title);
+        JS.local_storage.set("progress", this.progress);
     }
 };

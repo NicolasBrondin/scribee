@@ -81,6 +81,14 @@ var JS = {
             request.open('Get', file, true);
             request.send();
         }
+    },
+    local_storage: {
+        set: function(id, value){
+            window.localStorage.setItem(id, JSON.stringify(value));
+        },
+        get: function(id){
+            return JSON.parse(window.localStorage.getItem(id));
+        }
     }
     
 };
