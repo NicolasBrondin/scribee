@@ -1,6 +1,19 @@
+@font-face {
+    font-family: 'Grand Hotel';
+    src: url('../fonts/grandhotel-regular.eot');
+    src: url('../fonts/grandhotel-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/grandhotel-regular.woff2') format('woff2'),
+         url('../fonts/grandhotel-regular.woff') format('woff'),
+         url('../fonts/grandhotel-regular.ttf') format('truetype'),
+         url('../fonts/grandhotel-regular.svg#grand_hotelregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body, html {
     background: #ecf0f1;
-    font-family: Roboto,Helvetica,Arial;
+    font-family: 'Grand Hotel',Helvetica,Arial;
     width:100vw;
     height:100vh;
     overflow: hidden;
