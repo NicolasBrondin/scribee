@@ -100,6 +100,7 @@ var Game = {
          
          Game.init_from_files();
          Game.sounds.background.loop = true;
+         Game.sounds.background.volume = 0.3;
      }.bind(this),
      play: function(id){
          var s = Game.stories.find(function(story){
