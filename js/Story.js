@@ -94,8 +94,7 @@ var Story = function(){
                 this.current_scene.play();
             } else {
                 Game.finished_story(this.title);
-                //Need to redraw menu
-                Game.show_menu();
+                
             }
         }
     };

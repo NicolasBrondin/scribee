@@ -15,6 +15,7 @@ var Game = {
          drag: new Audio("audio/drag.mp3"),
          drop: new Audio("audio/drop.mp3"),
          success: new Audio("audio/success.mp3"),
+         finish: new Audio("audio/finish.mp3"),
          fail: new Audio("audio/fail.mp3")
      },
      elements: [],
@@ -188,5 +189,9 @@ var Game = {
     finished_story: function(title){
         this.progress.stories.push(title);
         JS.local_storage.set("progress", this.progress);
+        document.getElementById('bravo').style.animationName = "splash";
+        Game.play_sound('finish');
+        //Need to redraw menu
+        this.show_menu();
     }
 };
