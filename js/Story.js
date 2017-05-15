@@ -69,6 +69,7 @@ var Story = function(){
     };
     
     this.play = function(){
+        setInterval(function(){document.getElementById('transition').style.visibility = "hidden";},2500);
         this.current_scene = this.scenes[0];
         this.current_scene.play();
         var hand = document.getElementById('cursor-hand');
@@ -79,7 +80,7 @@ var Story = function(){
         JS.element.move(hand, element_position.x + element_position.width, element_position.y + element_position.height);
         setTimeout(this.show_tutorial,1000);
         
-    };
+    }.bind(this);
     
     this.set_user_answer = function(answers){
         this.current_scene.set_user_answer(answers);

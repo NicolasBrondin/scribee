@@ -123,7 +123,10 @@ var Game = {
          }else {
              document.getElementById('music-toggle').innerHTML = '<img src="img/btn-music-off.png"/>';
          }
-         Game.current_story.play();
+         document.getElementById('transition').style.visibility = "visible";
+         document.getElementById('left-curtain').style.animationName = 'curtain-left';
+         document.getElementById('right-curtain').style.animationName = 'curtain-right';
+         setTimeout(Game.current_story.play,2500);
      }.bind(this),
     show_menu : function(){
         document.getElementById('menu-container').style.display = "block";
@@ -139,20 +142,10 @@ var Game = {
                             var s = new Story();
                             s.init(story);
                             Game.stories.push(s);
-                            Game.add_menu_story(s);
+                            
                             
                             if(Game.stories.length == data.stories.length){
-                                var b = document.createElement('button');
-                                b.classList = "disabled";
-                                var i = document.createElement('img');
-                                i.src = 'img/plus.png';
-                                i.classList = "story-image";
-                                var d = document.createElement('div');
-                                d.classList = "story-name";
-                                d.innerHTML = "Bientôt...";
-                                b.appendChild(i);
-                                b.appendChild(d);
-                                document.getElementById("menu-buttons").appendChild(b);
+                                Game.build_menu();
                             }
                         } else {
                             console.error("Error while loading story at path", story_path);
@@ -163,6 +156,29 @@ var Game = {
                 console.error("Error while loading config files");
             }
         });
+    },
+    build_menu: function(){
+        
+        document.getElementById("menu-buttons").innerHTML = "";
+        
+        Game.stories.forEach(function(story){
+            Game.add_menu_story(story);
+        });
+        
+        var b = document.createElement('button');
+        b.classList = "disabled";
+        var i = document.createElement('img');
+        i.src = 'img/plus.png';
+        i.classList = "story-image";
+        var d = document.createElement('div');
+        d.classList = "story-name";
+        d.innerHTML = "Bientôt...";
+        b.appendChild(i);
+        b.appendChild(d);
+        document.getElementById("menu-buttons").appendChild(b);
+        
+        
+        
     },
     add_menu_story: function(story){
         var b = document.createElement('button');
@@ -192,6 +208,7 @@ var Game = {
         document.getElementById('bravo').style.animationName = "splash";
         Game.play_sound('finish');
         //Need to redraw menu
+        this.build_menu();
         this.show_menu();
     }
 };

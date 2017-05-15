@@ -33,6 +33,18 @@ button:focus{
 
 }
 
+@keyframes curtain-left {
+    0% {left:-70vw;}
+    50% {left: -10vw;}
+    100% {left:-70vw;}
+}
+
+@keyframes curtain-right {
+    0% {right:-70vw;}
+    50% {right: -10vw;}
+    100% {right: -70vw;}
+}
+
 #splash-screen{
     position: absolute;
     width:100vw;
@@ -68,6 +80,40 @@ button:focus{
     width:100vw;
 }
 
+#transition{
+    position: absolute;
+    width:100vw;
+    height:100vh;
+    z-index: 1000;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+#transition #left-curtain, #transition #right-curtain {
+    width: 70vw;
+    height: 100vh;
+    position: absolute;
+        background: url(../img/cloud-curtain.png);
+    background-repeat: repeat;
+    background-size: 100% 50.1%;
+}
+
+#transition #left-curtain {
+    left:-70vw;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    
+    //animation-delay: 5s;
+    //animation-name: curtain-left;
+}
+
+#transition #right-curtain {
+    right:-70vw;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    //animation-delay: 5s;
+    //animation-name: curtain-right;
+}
 
 @keyframes mouth {
     0% {transform: scale(1,1)}
