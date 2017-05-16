@@ -9,9 +9,9 @@ var Scene = function(){
     this.parent = null;
     
     this.play_sound = function() {
-          if(this.sound){
-               this.sound.play();
-          }
+        if(this.sound){
+            this.sound.play();
+        }
         document.getElementById('narrator-mouth').style.animationName = "mouth";
      },
     
