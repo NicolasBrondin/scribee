@@ -1,0 +1,158 @@
+{
+    "title": "Le nid",
+    "image":"logo.png",
+    "path":"nest",
+    "lang":"fr",
+    "premium":false,
+    "scenes": [
+        {
+            "sound":"1.mp3",
+            "words":[
+                { "label":"Il était une fois un" },
+                { "label":"oiseau",       "img":"bird",      "data":0 }
+            ]
+        },
+        {
+            "sound":"2.mp3",
+            "words":[
+                { "label":"qui vivait dans un" },
+                { "label":"nid",       "img":"nest",      "data":0 },
+                { "label":"en haut d'un" },
+                { "label":"arbre",       "img":"tree",      "data":1 }
+            ]
+        },
+        {
+            "sound":"3.mp3",
+            "words":[
+                { "label":"Dans le nid, il y avait un" },
+                { "label":"oeuf",       "img":"egg",      "data":0 },
+                { "label":", des" },
+                { "label":"feuilles",       "img":"leaves",      "data":1 },
+                { "label":" et des " },
+                { "label":"graines",       "img":"seeds",      "data":2 }
+            ]
+        },
+        {
+            "sound":"4.mp3",
+            "words":[
+                { "label":"Un jour, alors que l'" },
+                { "label":"oiseau",       "img":"bird",      "data":0 },
+                { "label":"volait au-dessus du " },
+                { "label":"lac",       "img":"lake",      "data":1 },
+                { "label":"où nageaient des" },
+                { "label":"poissons",       "img":"fishes",      "data":2 }
+            ]
+        },
+        {
+            "sound":"5.mp3",
+            "words":[
+                { "label":"il se posa sur un " },
+                { "label":"mouton",       "img":"sheep",      "data":0 },
+                { "label":"qui mangeait de l'" },
+                { "label":"herbe",       "img":"grass",      "data":1 },
+                { "label":"juste à côté" }
+            ]
+        },
+        {
+            "sound":"6.mp3",
+            "words":[
+                { "label":"L'" },
+                { "label":"oiseau",       "img":"bird",      "data":0 },
+                { "label":"retira une" },
+                { "label":"abeille",       "img":"bee",      "data":1 },
+                { "label":"coincée dans la" },
+                { "label":"laine",       "img":"wool",      "data":2 },
+                { "label":"du mouton et qui lui faisait mal" }
+            ]
+        },
+        {
+            "sound":"7.mp3",
+            "words":[
+                { "label":"Pour le remercier, le" },
+                { "label":"mouton",       "img":"sheep",      "data":0 },
+                { "label":"dit à l'" },
+                { "label":"oiseau",       "img":"bird",      "data":1 },
+                { "label":"qu'il lui donnerait de sa" },
+                { "label":"laine",       "img":"wool",      "data":2 },
+                { "label":"si il en avait besoin." }
+            ]
+        },
+        {
+            "sound":"8.mp3",
+            "words":[
+                { "label":"En revenant à son" },
+                { "label":"nid",       "img":"nest",      "data":0 },
+                { "label":", il découvrit que l'oeuf avait " },
+                { "label":"éclot",       "img":"hatch",      "data":1 },
+                { "label":", et qu'un " },
+                { "label":"bébé oiseau",       "img":"baby_bird",      "data":2 },
+                { "label":"était né." }
+            ]
+        },
+        {
+            "sound":"9.mp3",
+            "words":[
+                { "label":"Le papa " },
+                { "label":"oiseau",       "img":"bird",      "data":0 },
+                { "label":" voulait lui donner les " },
+                { "label":"graines",       "img":"seeds",      "data":1 },
+                { "label":", mais un" },
+                { "label":"rat",       "img":"rat",      "data":2 },
+                { "label":"qui passait par là était en train de les manger." }
+            ]
+        },
+        {
+            "sound":"10.mp3",
+            "words":[
+                { "label":"Un " },
+                { "label":"serpent",       "img":"snake",      "data":0 },
+                { "label":"proposa à l'" },
+                { "label":"oiseau",       "img":"bird",      "data":1 },
+                { "label":"de chasser le" },
+                { "label":"rat",       "img":"rat",      "data":2 },
+                { "label":"contre trois de ses" },
+                { "label":"plumes",       "img":"feathers",      "data":2 },
+                { "label":"pour se déguiser" }
+            ]
+        },
+        {
+            "sound":"11.mp3",
+            "words":[
+                { "label":"Mais c'est alors que la" },
+                { "label":"branche",       "img":"branch",      "data":0 },
+                { "label":"se cassa sous le poid de tous les animaux et que leur" },
+                { "label":"nid",       "img":"nest",      "data":1 },
+                { "label":"fût détruit." }
+            ]
+        },
+        {
+            "sound":"12.mp3",
+            "words":[
+                { "label":"Les deux " },
+                { "label":"oiseaux",       "img":"bird",      "data":0 },
+                { "label":"volèrent et ils atterirrent sur le dos de leur ami" },
+                { "label":"mouton",       "img":"nest",      "data":1 }
+            ]
+        },
+        {
+            "sound":"13.mp3",
+            "words":[
+                { "label":"Le" },
+                { "label":"mouton",       "img":"sheep",      "data":0 },
+                { "label":"leur proposa de faire leur" },
+                { "label":"nid",       "img":"nest",      "data":1 },
+                { "label":"avec sa " },
+                { "label":"laine",       "img":"wool",      "data":1 },
+                { "label":"comme promis et de les protéger des autres animaux" }
+            ]
+        },
+        {
+            "sound":"14.mp3",
+            "words":[
+                { "label":"On reconnait les vrais" },
+                { "label":"amis",       "img":"friends",      "data":0 },
+                { "label":"car ils sont toujours là même quand tout va mal !" }
+            ]
+        }
+    ] 
+}
