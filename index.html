@@ -27,13 +27,16 @@
         
         <div id="game-container">
             <button id="music-toggle" onclick="Game.toggle_background_sound()"><img src="img/btn-music.png"/></button>
+            <button id="btn-menu" onclick="Game.show_menu()"><img src="img/btn-menu-2.png"/></button>
             <img id="cursor-hand" src="img/cursor-hand.png" height="100" style="position:absolute;z-index:2000;left:0px; top:0px;"/>
             <div id="story-container">
                 <div id="playground-container">
                     <div id="narrator" onclick="Game.play_voice()">
                         <div id="narrator-face">
                             <img src="img/narrator.png" width="500" height="500"/>
-                            <div id="narrator-mouth"></div>
+                            <div id="narrator-mouth">
+                            <img src="img/narrator-mouth.png" />
+                            </div>
                         </div>
                     </div>
                     <div id="elements_container" >
@@ -41,7 +44,6 @@
                     </div>
                 </div>
                 <div id="bottom-container">
-                    <button id="btn-top-left" onclick="Game.show_menu()"><img src="img/btn-menu-2.png"/></button>
                     <div id="answers_container">
                     </div>
                     <button id="btn-bottom-right" onclick="Game.next_scene()"><img src="img/btn-next-2.png"/></button>
