@@ -134,11 +134,13 @@ button:focus{
 }
 
 #narrator{
-    height: 100%;
-    width:50%;
-    float:left;
-    overflow: hidden;
-    display: inline-block;
+        height: 80%;
+float: left;
+overflow: hidden;
+margin-left: 5%;
+position: absolute;
+bottom: 0;
+z-index: 2;
 }
 
 #narrator img {
@@ -318,17 +320,19 @@ font-family: 'Grand Hotel';
 }
 
 #elements_container {
-        position: relative;
+position: absolute;
 text-align: left;
-
 overflow-y: hidden;
 overflow-x: auto;
 padding-bottom: 5px;
 padding-top: 5px;
 display: inline-block;
-background: url('../img/shelf.png');
+background: url('../img/background-shelf.png');
 background-position: center;
-background-size: 100% 33.3%;
+background-size: 100% 100%;
+padding-left: 30px;
+box-sizing: border-box;
+right: 101px;
     }
 
 
@@ -350,14 +354,19 @@ background-size: 100% 33.3%;
         background-repeat: repeat-x;
         background-size: auto 100%;
         text-align: center;
+        position: relative;
     }
 
+.drag:first-child {
+    margin-left: 115px;
+}
     .drag {
         display: inline-block;
 margin-left: 5px;
 box-sizing: border-box;
 overflow: hidden;
 cursor: pointer;
+        z-index: 3;
     }
 
     .drag img {
@@ -477,9 +486,9 @@ cursor: pointer;
     }   
     
     #elements_container {
-        width: 263px;
-        height: 370px;
-        margin-top: calc(50vh - 90px - 140px);
+        width: 593px;
+height: 460px;
+margin-top: calc(50vh - 150px - 150px);
     }
 
     #answers_container {
@@ -492,8 +501,8 @@ cursor: pointer;
     }
     
     .drag { 
-        margin-top: 2px;
-        margin-bottom: 40px;
+        margin-top: 12px;
+margin-bottom: 31px;
         border-radius: 3px;
         border: 3px solid white;
     }
