@@ -131,7 +131,7 @@
                 { "label":"Les deux " },
                 { "label":"oiseaux",       "img":"bird",      "data":0 },
                 { "label":"volèrent et ils atterirrent sur le dos de leur ami" },
-                { "label":"mouton",       "img":"nest",      "data":1 }
+                { "label":"mouton",       "img":"sheep",      "data":1 }
             ]
         },
         {

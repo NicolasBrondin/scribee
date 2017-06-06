@@ -302,6 +302,7 @@ font-family: 'Grand Hotel';
 }
 
 #story-container #bottom-container {
+    position: relative;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -393,12 +394,11 @@ cursor: pointer;
 
     .slot {
         display: inline-block;
-        margin-left: 7px;
+        margin-left: 5px;
         overflow: hidden;
         padding: 0;
         border: 3px solid #5e2a11;
         border-radius: 4px;
-        box-sizing: border-box;
     }
 
     .slot .drag{
@@ -468,7 +468,37 @@ cursor: pointer;
     width: 100%;
 }
 
+#decoration-plane {
+    position: absolute;
+z-index: 5;
+height: 20%;
+top: 0;
+left: 30%;
+}
 
+#decoration-shred-1 {
+    position: absolute;
+z-index: 0;
+top: 0;
+left: 68.2%;
+height: 50px;
+}
+
+#decoration-shred-2 {
+position: absolute;
+z-index: 0;
+bottom: 0;
+left: 22.3%;
+height: 50px;
+}
+
+#decoration-shred-3 {
+position: absolute;
+z-index: 2;
+top: 0;
+left: 22.3%;
+height: 50px;
+}
 
 /* SIZES */
 
@@ -488,12 +518,12 @@ cursor: pointer;
     #elements_container {
         width: 593px;
 height: 460px;
-margin-top: calc(50vh - 150px - 150px);
+margin-top: 50px;
     }
 
     #answers_container {
         width: calc(100% - 138px);
-        padding-top: 10px;
+        padding-top: 5px;
     }
 
     #playground-container {
@@ -531,15 +561,15 @@ margin-bottom: 31px;
     }
 
     .slot {
-        height: 115px;
+        height: 120px;
     }
 
     .slot>p {
-        line-height: 115px;
+        line-height: 120px;
     }
 
     .drop {
-        width: 115px;
+        width: 120px;
     }
 
 
