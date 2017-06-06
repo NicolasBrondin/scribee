@@ -399,6 +399,7 @@ cursor: pointer;
         padding: 0;
         border: 3px solid #5e2a11;
         border-radius: 4px;
+        vertical-align: top;
     }
 
     .slot .drag{
@@ -494,7 +495,7 @@ height: 50px;
 
 #decoration-shred-3 {
 position: absolute;
-z-index: 2;
+z-index: 0;
 top: 0;
 left: 22.3%;
 height: 50px;
