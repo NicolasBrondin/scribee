@@ -33,8 +33,8 @@ var Scene = function(){
         Game.given_answer = [];
         Game.answers = [];
         Game.elements = [];
-document.getElementById('elements_container').innerHTML = "";
-document.getElementById('answers_container').innerHTML = "";
+        document.getElementById('elements_container').innerHTML = "";
+        document.getElementById('answers_container').innerHTML = "";
         this.words.forEach(function(w){
             if(w.img){
                 var d = document.createElement('div');

@@ -45,8 +45,10 @@ var Game = {
          JS.local_storage.set("settings",this.settings);
      },
      pick_element: function(e){
+        if(!e.target.parentElement.classList.contains("drag") ){
+            return;
+        }
          Game.selected_element = e.target.parentElement;
-         
          Game.play_sound('drag');
           var position = JS.mouse.move(e);
               JS.element.move(Game.selected_element, position.x - document.getElementById('story-container').offsetLeft  - document.getElementById('game-container').offsetLeft - (Game.selected_element.getBoundingClientRect().width/2), position.y - document.getElementById('story-container').offsetTop - document.getElementById('game-container').offsetTop - (Game.selected_element.getBoundingClientRect().height/2));
