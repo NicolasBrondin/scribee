@@ -1,24 +1,7 @@
-## Passage en application native 
+# Scribee
+Scribee is a story-based game for children to help them learn words with cards to drag and drop in the sentences.
 
-Listes des modifications pour transformation en appli native:
+![Project cover](docs/cover.png)
 
-Both:
-- Bloquer l'orientation en paysage
-
-iOS:
-- Désactiver le bounce
--self.Webview.mediaPlaybackRequiresUserAction = NO;
-
-Android:
-
-webSettings.setJavaScriptEnabled(true);
-webSettings.setDomStorageEnabled(true);
-webSettings.setMediaPlaybackRequiresUserGesture(false);
-webSettings.setAllowUniversalAccessFromFileURLs(true);
-
-Bugs:
-
-- Le son ne se démarre qu'au touché
-- le nuage n'arrive qu'une seule fois
-- l'animation ne se joue qu'une seule fois
-- iOS: le son bug un tout petit peu quand un autre son est joué (pas tout le temps)
+# Acknowledgements
+All the wonderful story images and the game UI was drawn by the awesome Joris Discepoli (aka. Okionero), you can find more of his work on his website: [okionero.com](http://okionero.com/)
