@@ -85,12 +85,8 @@ document.getElementById('answers_container').innerHTML = "";
     
     this.check_answers = function(){
         
-        console.log(this.given_answer);
-        console.log(Game.elements);
         var err = false;
         Game.elements.forEach(function(e){
-            console.log(e.attributes.data.value);
-            console.log(this.given_answer[e.attributes.data.value]);
             if(this.given_answer[e.attributes.data.value] == e.attributes.data.value){
                 JS.element.remove_class(e, "error");
             } else {

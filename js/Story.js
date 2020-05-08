@@ -33,9 +33,7 @@ var Story = function(){
         var hand_position = JS.element.refactor_bounding(hand.getBoundingClientRect());
         var element_position = JS.element.refactor_bounding(Game.elements[0].getBoundingClientRect());
         var drop_position = JS.element.refactor_bounding(Game.answers[1].getBoundingClientRect());//to be changed
-        console.log(hand_position);
-        console.log(element_position);
-        console.log(drop_position);
+
         //Set hand position equals to first card position
         JS.element.move(hand, element_position.x + element_position.width, element_position.y + element_position.height);
         
@@ -43,7 +41,6 @@ var Story = function(){
         var delta_x = drop_position.x + drop_position.width  - hand_position.x;
         var delta_y = drop_position.y -  hand_position.y ;
         var ratio = delta_x / delta_y;
-        console.log(delta_x, delta_y);
         var speed = 2;
         var t = 0;
         
@@ -74,8 +71,6 @@ var Story = function(){
         this.current_scene.play();
         var hand = document.getElementById('cursor-hand');
         var element_position = JS.element.refactor_bounding(Game.elements[0].getBoundingClientRect());
-        console.log(element_position);
-        console.log( element_position.x + element_position.width,  element_position.y + element_position.height)
         
         JS.element.move(hand, element_position.x + element_position.width, element_position.y + element_position.height);
         setTimeout(this.show_tutorial,1000);
