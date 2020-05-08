@@ -1,6 +1,8 @@
 # Scribee
 Scribee is a story-based game for children to help them learn words with cards to drag and drop in the sentences.
 
+Live demo is available here: [https://nicolasbrondin.github.io/scribee/](https://nicolasbrondin.github.io/scribee/)
+
 ![Project cover](docs/cover.png)
 
 ## How to start
